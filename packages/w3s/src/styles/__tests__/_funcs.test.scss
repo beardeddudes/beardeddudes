@@ -1,0 +1,17 @@
+@import "true";
+@import "./../funcs";
+
+@include describe("The `remove-unit` function") {
+  @include it("returns the value of the property without units.") {
+    @include assert-equal(remove-unit("1440px"), "1440");
+    @include assert-equal(remove-unit("150%"), "150");
+  }
+}
+
+@include describe("The `to-percent` function") {
+  @include it("returns converted value as a percentage.") {
+    @include assert-equal(to-percent(50, 100), 50%);
+    @include assert-equal(to-percent(25, 200), 12.5%);
+    @include assert-equal(to-percent(12, 300), 4%);
+  }
+}

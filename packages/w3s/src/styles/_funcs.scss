@@ -1,0 +1,42 @@
+/**
+ * Removes the unit from a CSS value, returning the numeric part.
+ *
+ * @param {string} $value - The CSS value from which to remove the unit.
+ * @return {number} - The numeric part of the value without the unit.
+ * @throws {error} - Throws an error if no unit is found or if the unit is not in the list of units.
+*/
+@function remove-unit ($value) {
+  $units: ("px", "rem", "em", "vh", "vw", "vmin", "vmax", "ch", "%");
+  $unitFound: false;
+
+  @each $unit in $units {
+    @if (str-index($value, $unit) !=null) {
+      // If the value contains the current unit, remove the corresponding number of characters from the end
+      $unitLength: str-length($unit);
+      $unitFound: true;
+
+      @return str-slice($value, 1, -$unitLength - 1);
+    }
+  }
+
+  // If no unit is found, throw an error
+  @if not $unitFound {
+    @error "No unit found in value: #{$value}.";
+  }
+
+  // If the unit is not in the list of units, throw an error
+  @error "Unsupported unit found in value: #{$value}.";
+}
+
+/**
+ * Converts a pixel value to a percentage relative to another value.
+ *
+ * @param {number} $px - The value in pixels to convert to a percentage.
+ * @param {number} $from - The value relative to which the conversion is made.
+ * @return {number} - The converted value as a percentage.
+*/
+@function to-percent ($px, $from) {
+  $result: calc(($px / $from) * 100%); // Calculate the percentage value
+
+  @return $result;
+}
