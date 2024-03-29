@@ -1,0 +1,53 @@
+{
+  "browserslist": [
+    "> 0.25%",
+    "last 2 versions",
+    "not dead",
+    "not ie <= 10"
+  ],
+  "dependencies": {
+    "react": "~18.2.0",
+    "react-dom": "~18.2.0",
+    "react-responsive": "~9.0.2",
+    "react-router": "~6.14.1",
+    "react-router-dom": "~6.14.1",
+    "react-use": "~17.5.0"
+  },
+  "description": "ReactJS frontend application based on Chakra UI components",
+  "devDependencies": {
+    "@beardeddudes/vite-config": "~0.1.*",
+    "@testing-library/dom": "~9.3.4",
+    "@testing-library/jest-dom": "~6.4.2",
+    "@testing-library/react": "~14.2.2",
+    "@testing-library/user-event": "~14.5.2",
+    "@types/react": "~18.2.48",
+    "@types/react-dom": "~18.2.18",
+    "@types/react-responsive": "~8.0.8",
+    "@types/react-router": "~5.1.20",
+    "jsdom": "~24.0.0",
+    "sass-true": "~8.0.0",
+    "vitest": "~1.4.0"
+  },
+  "engines": {
+    "node": "~18.18.2"
+  },
+  "maintainers": [
+    {
+      "email": "hey@beardeddudes.dev",
+      "name": "Bearded Dudes",
+      "url": "https://github.com/beardeddudes"
+    }
+  ],
+  "name": "@nodejs-project-templates-light/w3s",
+  "repository": {
+    "directory": "packages/w3s",
+    "type": "git",
+    "url": "git+https://github.com/beardeddudes/nodejs-project-templates-light.git"
+  },
+  "scripts": {
+    "build": "npx vite build",
+    "serve": "npx vite serve --host",
+    "tests": "npx vitest run"
+  },
+  "version": "2024.1.1"
+}
