@@ -2,16 +2,15 @@ import { FC, SVGProps } from "react"
 
 import { ReactComponent as ReactIcon } from "./icons/react.svg"
 
-type IconType = "react"
-
-const icons: Record<IconType, FC<SVGProps<SVGSVGElement>>> = {
+const icons = {
   react: ReactIcon,
 } as const
 
-type SvgIconProps = SVGProps<SVGSVGElement> & { type: IconType }
+export type IconName = keyof typeof icons
+type SvgIconProps = SVGProps<SVGSVGElement> & { name: IconName }
 
-const SvgIcon: FC<SvgIconProps> = ({ type, ...svgProps }) => {
-  const Icon = icons[type] ?? null
+const SvgIcon: FC<SvgIconProps> = ({ name, ...svgProps }) => {
+  const Icon = icons[name] ?? null
   return Icon && <Icon {...svgProps} />
 }
 

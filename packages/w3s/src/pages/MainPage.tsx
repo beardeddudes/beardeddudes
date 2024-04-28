@@ -24,7 +24,7 @@ const MainPage: FC = () => {
             width: "164px",
           }}
         >
-          <SvgIcon type={"react"} />
+          <SvgIcon name={"react"} />
         </div>
       </div>
     </React.Fragment>
