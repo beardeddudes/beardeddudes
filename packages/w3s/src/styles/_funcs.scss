@@ -21,11 +21,11 @@
 
   // If no unit is found, throw an error
   @if not $unitFound {
-    @error "No unit found in value: #{$value}.";
+    @error "no unit found in value: #{$value}.";
   }
 
   // If the unit is not in the list of units, throw an error
-  @error "Unsupported unit found in value: #{$value}.";
+  @error "unsupported unit found in value: #{$value}.";
 }
 
 /**
