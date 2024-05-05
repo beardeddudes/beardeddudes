@@ -1,0 +1,19 @@
+{
+  "header": {
+    "navigation": {
+      "services": "Services",
+      "technologies": "Technologies",
+      "process": "Process",
+      "works": "Works",
+      "about": "About",
+      "contacts": "Contacts"
+    },
+    "startProject": "Start a project"
+  },
+  "main": {},
+  "footer": {
+    "questions": "Got a project? Want to collaborate?",
+    "title": "Get in touch",
+    "allRightsReserved": "All rights reserved"
+  }
+}
