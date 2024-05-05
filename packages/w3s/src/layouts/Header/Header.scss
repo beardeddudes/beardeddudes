@@ -1,0 +1,52 @@
+@import "@styles/variables";
+@import "@styles/mixin";
+
+.header {
+  &__container {
+    @include adaptive-value("padding-top", 24, 15, 1);
+    @include adaptive-value("padding-bottom", 24, 15, 1);
+
+    display: grid;
+    grid-template-columns: 185px 1fr 185px;
+    align-items: center;
+    max-width: $container;
+    margin: 0 auto;
+    padding-right: 20px;
+    padding-left: 20px;
+    column-gap: 20px;
+  }
+
+  &__logo {
+    grid-column: 1/2;
+    color: rgb(11, 11, 11);
+    font-weight: 700;
+    font-size: 24px;
+  }
+
+  &__navigation {
+    display: flex;
+    grid-column: 2/3;
+    align-items: center;
+    justify-content: center;
+    column-gap: 29px;
+  }
+
+  &__navigation-btn {
+    color: $primary-color;
+    font-weight: 500;
+  }
+
+  &__project-btn {
+    display: flex;
+    flex: 0 0 auto;
+    grid-column: 3/4;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 15px 24px;
+    color: $secondary-color;
+    font-weight: 500;
+    background-color: $primary-color;
+    border-radius: 35px;
+  }
+}
