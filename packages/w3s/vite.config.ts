@@ -4,7 +4,7 @@ import { fileURLToPath, URL } from "url"
 export default configure(
   {
     appType: "spa",
-    base: "beardeddudes",
+    base: "/",
     build: {
       outDir: "dist",
       assetsInlineLimit: 1024 * 4,
