@@ -7,7 +7,7 @@ import NotFoundPage from "./NotFoundPage"
 const Router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
-      <Route path={"/"} element={<DefaultLayout />}>
+      <Route path={"/beardeddudes"} element={<DefaultLayout />}>
         <Route index={true} element={<MainPage />} />
         <Route element={<NotFoundPage />} path={"*"} />
       </Route>
