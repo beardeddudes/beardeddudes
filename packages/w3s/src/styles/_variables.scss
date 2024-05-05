@@ -1,6 +1,6 @@
 $containerMaxWidth: 1920px;
 $containerMinWidth: 320px;
-$container: 1440px;
+$container: 1720px;
 
 $base: 0;
 $xs: 360px;
@@ -9,3 +9,8 @@ $md: 768px;
 $lg: 992px;
 $xl: 1280px;
 $xxl: 1536px;
+
+// Theme colors
+$primary-color: rgb(21, 21, 21);
+$secondary-color: rgb(226, 226, 226);
+$accent-color: rgb(246, 155, 3);
