@@ -15,7 +15,7 @@
     padding-left: 20px;
   }
 
-  &__main {
+  &__main-wrapper {
     @include adaptive-value("font-size", 80, 60, 1);
     @include adaptive-value("padding-top", 230, 288, 1);
     @include adaptive-value("margin-bottom", 128, 24, 1);
@@ -27,7 +27,7 @@
     font-weight: 900;
   }
 
-  &__block-main {
+  &__main {
     &--start {
       text-transform: uppercase;
     }

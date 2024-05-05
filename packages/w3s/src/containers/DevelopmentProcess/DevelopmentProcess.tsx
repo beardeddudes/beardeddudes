@@ -1,6 +1,7 @@
 import React, { FC } from "react"
 
 import "./DevelopmentProcess.scss"
+
 const DevelopmentProcess: FC = () => {
   return (
     <section className={"development__section"}>
