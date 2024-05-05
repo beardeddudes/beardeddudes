@@ -1,0 +1,88 @@
+@import "@styles/mixin";
+@import "@styles/variables";
+
+.footer {
+  &__section {
+    padding: 35px 0;
+    background-color: $primary-color;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: $container;
+    margin: 0 auto;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  &__navigate {
+    @include adaptive-value("margin-bottom", 160, 160, 1);
+
+    display: grid;
+    grid-template-columns: 1fr 175px 1fr;
+    align-items: center;
+    justify-content: center;
+    column-gap: 200px;
+  }
+
+  &__links {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+
+    &--mail {
+      grid-column: 3/4;
+    }
+
+    &--social {
+      grid-column: 1/2;
+    }
+  }
+
+  &__link {
+    color: $secondary-color;
+    font-weight: 700;
+    line-height: 120%;
+    text-transform: uppercase;
+  }
+
+  &__questions {
+    @include adaptive-value("font-size", 24, 24, 1);
+
+    margin-bottom: 10px;
+    color: $secondary-color;
+    font-weight: 700;
+    line-height: 120%;
+    text-align: center;
+  }
+
+  &__title {
+    @include adaptive-value("font-size", 210, 210, 1);
+    @include adaptive-value("margin-bottom", 160, 160, 1);
+
+    color: $secondary-color;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  &__button {
+    display: flex;
+    grid-column: 2/3;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 15px 24px;
+    color: $primary-color;
+    font-weight: 500;
+    background-color: $secondary-color;
+    border-radius: 35px;
+  }
+
+  &__rights {
+    color: rgba(226, 226, 226, 0.5);
+    text-align: center;
+  }
+}
