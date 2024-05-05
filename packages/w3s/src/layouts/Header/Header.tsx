@@ -1,24 +1,30 @@
 import React, { FC } from "react"
+import { useTranslation } from "react-i18next"
 
 import "./Header.scss"
+
 const Header: FC = () => {
+  const { t } = useTranslation("global")
+
   return (
-    <div className={"header__container"}>
-      <a href={"/"} className={"header__logo"}>
-        cactus
-      </a>
-      <div className={"header__navigation"}>
-        <button className={"header__navigation-btn"}>Services</button>
-        <button className={"header__navigation-btn"}>Technologies</button>
-        <button className={"header__navigation-btn"}>Process</button>
-        <button className={"header__navigation-btn"}>Works</button>
-        <button className={"header__navigation-btn"}>About</button>
-        <button className={"header__navigation-btn"}>Contacts</button>
+    <React.Fragment>
+      <div className={"header__container"}>
+        <a href={"/"} className={"header__logo"}>
+          cactus
+        </a>
+        <div className={"header__navigation"}>
+          <button className={"header__navigation-btn"}>{t("header.navigation.services")}</button>
+          <button className={"header__navigation-btn"}>{t("header.navigation.technologies")}</button>
+          <button className={"header__navigation-btn"}>{t("header.navigation.process")}</button>
+          <button className={"header__navigation-btn"}>{t("header.navigation.works")}</button>
+          <button className={"header__navigation-btn"}>{t("header.navigation.about")}</button>
+          <button className={"header__navigation-btn"}>{t("header.navigation.contacts")}</button>
+        </div>
+        <button className={"header__start-project-btn"}>
+          <span>{t("header.startProject")}</span>
+        </button>
       </div>
-      <button className={"header__project-btn"}>
-        <span>Start a project</span>
-      </button>
-    </div>
+    </React.Fragment>
   )
 }
 

@@ -1,30 +1,38 @@
-import { FC } from "react"
+import React, { FC } from "react"
+import { useTranslation } from "react-i18next"
 
 import "./Footer.scss"
+
 const Footer: FC = () => {
+  const { t } = useTranslation("global")
+
   return (
-    <div className={"footer__section"}>
-      <div className={"footer__container"}>
-        <div className={"footer__collaborate"}>
-          <div className={"footer__questions"}>Got a project? Want to collaborate?</div>
-          <div className={"footer__title"}>GET IN TOUCH</div>
+    <React.Fragment>
+      <div className={"footer__section"}>
+        <div className={"footer__container"}>
+          <div className={"footer__collaborate"}>
+            <div className={"footer__questions"}>{t("footer.questions")}</div>
+            <div className={"footer__title"}>{t("footer.title")}</div>
+          </div>
+          <div className={"footer__navigation"}>
+            <div className={"footer__links footer__links--social"}>
+              <a className={"footer__link"}>LinkedIn</a>
+              <a className={"footer__link"}>Instagram</a>
+            </div>
+            <div className={"footer__start-project-btn"}>
+              <span>Start a project</span>
+            </div>
+            <div className={"footer__links footer__links--write-up"}>
+              <a className={"footer__link"}>hey@cactus.io</a>
+              <a className={"footer__link"}>Telegram</a>
+            </div>
+          </div>
+          <div className={"footer__all-rights-reserved"}>
+            ©{new Date().getFullYear()}, Cactus. {t("footer.allRightsReserved")}.
+          </div>
         </div>
-        <div className={"footer__navigate"}>
-          <div className={"footer__links footer__links--social"}>
-            <a className={"footer__link"}>LINKEDIN</a>
-            <a className={"footer__link"}>instagram</a>
-          </div>
-          <div className={"footer__button"}>
-            <span>Start a project</span>
-          </div>
-          <div className={"footer__links footer__links--mail"}>
-            <a className={"footer__link"}>hello@cactus.io</a>
-            <a className={"footer__link"}>Telegram</a>
-          </div>
-        </div>
-        <div className={"footer__rights"}>© 2023 Cactus. All rights reserved.</div>
       </div>
-    </div>
+    </React.Fragment>
   )
 }
 
