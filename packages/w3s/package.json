@@ -39,16 +39,16 @@
       "url": "https://github.com/beardeddudes"
     }
   ],
-  "name": "@nodejs-project-templates-light/w3s",
+  "name": "@beardeddudes/w3s",
   "repository": {
     "directory": "packages/w3s",
     "type": "git",
-    "url": "git+https://github.com/beardeddudes/nodejs-project-templates-light.git"
+    "url": "git+https://github.com/beardeddudes/beardeddudes.git"
   },
   "scripts": {
     "build": "npx vite build",
     "serve": "npx vite serve --host",
     "tests": "npx vitest run"
   },
-  "version": "2024.1.2"
+  "version": "2024.1.1"
 }
