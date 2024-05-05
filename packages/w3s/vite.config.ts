@@ -3,6 +3,23 @@ import { fileURLToPath, URL } from "url"
 
 export default configure(
   {
+    appType: "spa",
+    base: "/new-company",
+    build: {
+      outDir: "dist",
+      assetsInlineLimit: 1024 * 4,
+      chunkSizeWarningLimit: 1024,
+      cssCodeSplit: true,
+      emptyOutDir: true,
+      manifest: true,
+      minify: "terser",
+      modulePreload: true,
+      sourcemap: true,
+      ssr: false,
+      ssrManifest: false,
+      target: "esnext",
+      write: true,
+    },
     resolve: {
       alias: [
         { find: "@", replacement: fileURLToPath(new URL("./src", import.meta.url)) },
