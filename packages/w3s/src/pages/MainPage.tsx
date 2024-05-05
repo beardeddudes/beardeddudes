@@ -1,32 +1,14 @@
 import React, { FC } from "react"
-
-import { SvgIcon } from "../components/Icon"
+import Hero from "./../containers/Hero/Hero"
+import Technologies from "./../containers/Technologies/Technologies"
+import WeDo from "./../containers/WeDo/WeDo"
 
 const MainPage: FC = () => {
   return (
     <React.Fragment>
-      <div
-        style={{
-          alignItems: "center",
-          display: "flex",
-          flexDirection: "column",
-          fontSize: "28px",
-          height: "100vh",
-          justifyContent: "center",
-        }}
-      >
-        Hey from Bearded Dudes!
-        <div
-          style={{
-            height: "164px",
-            margin: "10px",
-            padding: "10px",
-            width: "164px",
-          }}
-        >
-          <SvgIcon name={"react"} />
-        </div>
-      </div>
+      <Hero />
+      <WeDo />
+      <Technologies />
     </React.Fragment>
   )
 }
