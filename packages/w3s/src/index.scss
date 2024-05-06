@@ -9,6 +9,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-size: 16px;
+  background-color: $primary-color;
 
   &.no-scroll {
     overflow: hidden;
@@ -19,4 +20,5 @@ div#root {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow-y: hidden;
 }
