@@ -1,0 +1,118 @@
+@import "@styles/mixin";
+@import "@styles/variables";
+
+.about-us {
+  &__section {
+    color: $secondary-color;
+  }
+
+  &__container {
+    max-width: $container;
+    margin: 0 auto;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  &__title {
+    @include adaptive-value("font-size", 100, 100, 1);
+    @include adaptive-value("margin-bottom", 174, 174, 1);
+
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  &__info {
+    @include adaptive-value("margin-bottom", 266, 266, 1);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &__description {
+    grid-column: 2/3;
+  }
+
+  &__text {
+    @include adaptive-value("margin-bottom", 145, 145, 1);
+    @include adaptive-value("font-size", 29, 29, 1);
+
+    max-width: 640px;
+    line-height: 150%;
+
+    p {
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &__indicators {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    row-gap: 100px;
+  }
+
+  &__indicator {
+    display: flex;
+    align-items: center;
+    column-gap: 32px;
+
+    span {
+      @include adaptive-value("font-size", 60, 60, 1);
+
+      font-weight: 800;
+      line-height: 120%;
+    }
+
+    p {
+      flex: 0 1 220px;
+      max-width: 220px;
+      color: rgba(226, 226, 226, 0.5);
+      line-height: 150%;
+    }
+  }
+
+  &__sub-title {
+    @include adaptive-value("font-size", 60, 60, 1);
+    @include adaptive-value("margin-bottom", 80, 80, 1);
+
+    max-width: 400px;
+    font-weight: 800;
+  }
+
+  &__team-list {
+    @include adaptive-value("margin-bottom", 210, 210, 1);
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 20px;
+  }
+}
+
+.principles {
+  @include adaptive-value("margin-bottom", 325, 325, 1);
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  column-gap: 75px;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  &__heading {
+    @include adaptive-value("font-size", 24, 24, 1);
+
+    margin-bottom: 26px;
+    font-weight: 800;
+  }
+
+  &__text {
+    color: rgba(226, 226, 226, 0.5);
+    line-height: 150%;
+    text-align: left;
+  }
+}
