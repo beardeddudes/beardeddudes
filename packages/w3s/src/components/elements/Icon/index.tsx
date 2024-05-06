@@ -1,13 +1,15 @@
 import { FC, SVGProps } from "react"
 
-import { ReactComponent as ReactIcon } from "./icons/react.svg"
+import { ReactComponent as ViewDarkIcon } from "./icons/view-dark.svg"
+import { ReactComponent as ViewLightIcon } from "./icons/view-light.svg"
 
 const icons = {
-  react: ReactIcon,
+  ["view-light"]: ViewLightIcon,
+  ["view-dark"]: ViewDarkIcon,
 } as const
 
 export type IconName = keyof typeof icons
-type SvgIconProps = SVGProps<SVGSVGElement> & { name: IconName }
+export type SvgIconProps = SVGProps<SVGSVGElement> & { name: IconName }
 
 const SvgIcon: FC<SvgIconProps> = ({ name, ...svgProps }) => {
   const Icon = icons[name] ?? null
