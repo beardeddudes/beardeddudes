@@ -13,7 +13,7 @@ const Header: FC = () => {
           cactus
         </a>
         <div className={"header__navigation"}>
-          <button className={"header__navigation-btn"}>{t("header.navigation.services")}</button>
+          <button className={"header__navigation-btn"}>{t("header.navigation.weDo")}</button>
           <button className={"header__navigation-btn"}>{t("header.navigation.technologies")}</button>
           <button className={"header__navigation-btn"}>{t("header.navigation.process")}</button>
           <button className={"header__navigation-btn"}>{t("header.navigation.works")}</button>

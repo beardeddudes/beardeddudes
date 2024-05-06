@@ -17,7 +17,10 @@ const WeDo: FC = () => {
     <React.Fragment>
       <section className={"wedo__section"}>
         <div className={"wedo__heading"}>
-          <div className={"wedo__heading-phrase"} dangerouslySetInnerHTML={{ __html: t("main.weDo.phrase") }}></div>
+          <div
+            className={"wedo__heading-little-inspire-phrase"}
+            dangerouslySetInnerHTML={{ __html: t("main.weDo.littleInspirePhrase") }}
+          ></div>
           <h2 className={"wedo__heading-title"}>{t("main.weDo.title")}</h2>
         </div>
         <div className={"wedo__content"}>

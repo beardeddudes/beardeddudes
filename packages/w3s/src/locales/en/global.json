@@ -1,7 +1,7 @@
 {
   "header": {
     "navigation": {
-      "services": "Services",
+      "weDo": "We do!",
       "technologies": "Technologies",
       "process": "Process",
       "works": "Works",
@@ -11,15 +11,19 @@
     "startProject": "Start a project"
   },
   "main": {
+    "hero": {
+      "introTheCompany": "Team of creative minds with more than 15 years of experience in the field. In this complex world...",
+      "scroll": "scroll down"
+    },
     "weDo": {
-      "phrase": "Everything <br /> your business needs on the web",
+      "littleInspirePhrase": "Everything <br /> your business needs on the web",
       "title": "We do",
       "exactlyWhatWeDo": [
         {
           "scope": "Sites",
           "branches": [
             {
-              "branchTitle": "Landing page",
+              "branchTitle": "Landing Page",
               "branchDescription": "Aenean eleifend sem nec enim egestas blandit. Aenean aliquet quam sed venenatis"
             },
             {
@@ -31,7 +35,7 @@
               "branchDescription": "Aenean eleifend sem nec enim egestas blandit. Aenean aliquet quam sed venenatis"
             },
             {
-              "branchTitle": "Admin Panels",
+              "branchTitle": "Admin Panel",
               "branchDescription": "Aenean eleifend sem nec enim egestas blandit. Aenean aliquet quam sed venenatis"
             },
             {
