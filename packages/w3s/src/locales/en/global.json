@@ -10,7 +10,69 @@
     },
     "startProject": "Start a project"
   },
-  "main": {},
+  "main": {
+    "weDo": {
+      "phrase": "Everything <br /> your business needs on the web",
+      "title": "We do",
+      "exactlyWhatWeDo": [
+        {
+          "scope": "Sites",
+          "branches": [
+            {
+              "branchTitle": "Landing page",
+              "branchDescription": "Aenean eleifend sem nec enim egestas blandit. Aenean aliquet quam sed venenatis"
+            },
+            {
+              "branchTitle": "Corporate",
+              "branchDescription": "Aenean eleifend sem nec enim egestas blandit. Aenean aliquet quam sed venenatis"
+            },
+            {
+              "branchTitle": "Online Store",
+              "branchDescription": "Aenean eleifend sem nec enim egestas blandit. Aenean aliquet quam sed venenatis"
+            },
+            {
+              "branchTitle": "Admin Panels",
+              "branchDescription": "Aenean eleifend sem nec enim egestas blandit. Aenean aliquet quam sed venenatis"
+            },
+            {
+              "branchTitle": "Blog",
+              "branchDescription": "Aenean eleifend sem nec enim egestas blandit. Aenean aliquet quam sed venenatis"
+            }
+          ]
+        },
+        {
+          "scope": "Design",
+          "branches": [
+            {
+              "branchTitle": "User Experience",
+              "branchDescription": "Aenean eleifend sem nec enim egestas blandit. Aenean aliquet quam sed venenatis"
+            },
+            {
+              "branchTitle": "User Interface",
+              "branchDescription": "Aenean eleifend sem nec enim egestas blandit. Aenean aliquet quam sed venenatis"
+            }
+          ]
+        },
+        {
+          "scope": "coding",
+          "branches": [
+            {
+              "branchTitle": "Frontend App",
+              "branchDescription": "Aenean eleifend sem nec enim egestas blandit. Aenean aliquet quam sed venenatis"
+            },
+            {
+              "branchTitle": "Server App",
+              "branchDescription": "Aenean eleifend sem nec enim egestas blandit. Aenean aliquet quam sed venenatis"
+            },
+            {
+              "branchTitle": "Bots",
+              "branchDescription": "Aenean eleifend sem nec enim egestas blandit. Aenean aliquet quam sed venenatis"
+            }
+          ]
+        }
+      ]
+    }
+  },
   "footer": {
     "questions": "Got a project? Want to collaborate?",
     "title": "Get in touch",

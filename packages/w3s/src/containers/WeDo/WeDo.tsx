@@ -1,101 +1,47 @@
 import React, { FC } from "react"
+import { useTranslation } from "react-i18next"
 
 import "./WeDo.scss"
 
-const WeDo: FC = () => {
-  interface IWorksList {
-    categoryName: string
-    list: { serviceName: string; description: string }[]
-  }
+interface IWeDo {
+  scope: string
+  branches: { branchTitle: string; branchDescription: string }[]
+}
 
-  //prettier-ignore
-  const servicesList: IWorksList[] = [
-    {
-      categoryName: "Sites",
-      list: [
-        {
-          serviceName: "Landing page",
-          description: "Aenean eleifend sem nec enim egestas blandit. Aenean aliquet quam sed venenatis",
-        },
-        {
-          serviceName: "Corporate",
-          description: "Aenean eleifend sem nec enim egestas blandit. Aenean aliquet quam sed venenatis",
-        },
-        {
-          serviceName: "Online Store",
-          description: "Aenean eleifend sem nec enim egestas blandit. Aenean aliquet quam sed venenatis",
-        },
-        {
-          serviceName: "Admin Panels",
-          description: "Aenean eleifend sem nec enim egestas blandit. Aenean aliquet quam sed venenatis",
-        },
-        {
-          serviceName: "Blog",
-          description: "Aenean eleifend sem nec enim egestas blandit. Aenean aliquet quam sed venenatis",
-        },
-      ],
-    },
-    {
-      categoryName: "Design",
-      list: [
-        {
-          serviceName: "User Experience",
-          description: "Aenean eleifend sem nec enim egestas blandit. Aenean aliquet quam sed venenatis",
-        },
-        {
-          serviceName: "User Interface",
-          description: "Aenean eleifend sem nec enim egestas blandit. Aenean aliquet quam sed venenatis",
-        },
-      ],
-    },
-    {
-      categoryName: "coding",
-      list: [
-        {
-          serviceName: "Frontend App",
-          description: "Aenean eleifend sem nec enim egestas blandit. Aenean aliquet quam sed venenatis",
-        },
-        {
-          serviceName: "Server App",
-          description: "Aenean eleifend sem nec enim egestas blandit. Aenean aliquet quam sed venenatis",
-        },
-        {
-          serviceName: "Bots",
-          description: "Aenean eleifend sem nec enim egestas blandit. Aenean aliquet quam sed venenatis",
-        },
-      ],
-    },
-  ]
+const WeDo: FC = () => {
+  const { t } = useTranslation("global")
+
+  const exactlyWhatWeDo: IWeDo[] = t("main.weDo.exactlyWhatWeDo", { returnObjects: true })
 
   return (
-    <section className={"we-do__section"}>
-      <div className={"we-do__heading"}>
-        <div className={"we-do__heading-text"}>
-          Everything <br /> your business needs on the web
+    <React.Fragment>
+      <section className={"wedo__section"}>
+        <div className={"wedo__heading"}>
+          <div className={"wedo__heading-phrase"} dangerouslySetInnerHTML={{ __html: t("main.weDo.phrase") }}></div>
+          <h2 className={"wedo__heading-title"}>{t("main.weDo.title")}</h2>
         </div>
-        <h2 className={"we-do__heading-title"}>we do</h2>
-      </div>
-      <div className={"we-do__content"}>
-        {servicesList.map((category, key) => {
-          return (
-            <article key={key} className={"we-do__item"}>
-              <h3 className={"we-do__category-name"}>{category.categoryName}</h3>
-              <ul className={"we-do__services"}>
-                {category.list.map((el, key) => {
-                  return (
-                    <li className={"we-do__service"} key={key}>
-                      <div className={"we-do__service-container"}>
-                        <h4 className={"we-do__service-title"}>{el.serviceName}</h4>
-                      </div>
-                    </li>
-                  )
-                })}
-              </ul>
-            </article>
-          )
-        })}
-      </div>
-    </section>
+        <div className={"wedo__content"}>
+          {exactlyWhatWeDo.map((wedo, key) => {
+            return (
+              <article key={key} className={"wedo__item"}>
+                <h3 className={"wedo__scope"}>{wedo.scope}</h3>
+                <ul className={"wedo__branches"}>
+                  {wedo.branches.map((elt, key) => {
+                    return (
+                      <li className={"wedo__branch-wrapper"} key={key}>
+                        <div className={"wedo__branch"}>
+                          <h4 className={"wedo__branch-title"}>{elt.branchTitle}</h4>
+                        </div>
+                      </li>
+                    )
+                  })}
+                </ul>
+              </article>
+            )
+          })}
+        </div>
+      </section>
+    </React.Fragment>
   )
 }
 
