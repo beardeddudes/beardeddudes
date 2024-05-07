@@ -37,11 +37,13 @@ const WorkCard: FC<IWorkCardProps> = ({ theme = "dark", work }) => {
             })}
           </ul>
           <div className={"work-card__tools"}>
-            <p>{work.tools.toolsTitle}</p>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+            <p className={"work-card__tools-title"}>{work.tools.toolsTitle}</p>
+            <div className={"work-card__tools-list"}>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
           </div>
         </div>
       </div>

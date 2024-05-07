@@ -6,6 +6,7 @@
     @include adaptive-value("padding-bottom", 200, 200, 1);
 
     background-color: $primary-color;
+    //  overflow-x: hidden;
   }
 
   &__container {
@@ -17,7 +18,7 @@
 
   &__title {
     @include adaptive-value("font-size", 100, 100, 1);
-    @include adaptive-value("margin-bottom", 66, 66, 1);
+    @include adaptive-value("margin-bottom", 66, 72, 1);
 
     display: flex;
     gap: 20px;

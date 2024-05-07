@@ -16,26 +16,42 @@
   }
 
   &__main-wrapper {
-    @include adaptive-value("font-size", 80, 60, 1);
-    @include adaptive-value("padding-top", 230, 288, 1);
+    @include adaptive-value("padding-top", 230, 104, 1);
     @include adaptive-value("margin-bottom", 128, 24, 1);
 
     display: grid;
-    grid-template-columns: 1fr 320px 1fr;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
     color: $primary-color;
     font-weight: 900;
+
+    @media (max-width: $lg) {
+      grid-template-rows: 1fr auto 1fr;
+      grid-template-columns: 1fr;
+    }
   }
 
   &__main {
     &--start {
+      @include adaptive-value("font-size", 80, 60, 1);
+
       text-transform: uppercase;
+
+      @media (max-width: $lg) {
+        grid-row: 1/2;
+        grid-column: 1/2;
+        justify-self: center;
+        max-width: 220px;
+        padding-bottom: 36px;
+        text-align: center;
+      }
     }
 
     &--to {
       @include adaptive-value("height", 320, 280, 1);
       @include adaptive-value("width", 320, 280, 1);
       @include adaptive-value("flex-basis", 320, 280, 1);
+      @include adaptive-value("font-size", 80, 70, 1);
 
       display: flex;
       flex-grow: 0;
@@ -46,11 +62,26 @@
       font-weight: 800;
       background-color: $accent-color;
       border-radius: 50%;
+
+      @media (max-width: $lg) {
+        grid-row: 2/3;
+        grid-column: 1/2;
+        justify-self: center;
+      }
     }
 
     &--end {
+      @include adaptive-value("font-size", 80, 60, 1);
+
       text-align: end;
       text-transform: uppercase;
+
+      @media (max-width: $lg) {
+        grid-row: 3/4;
+        grid-column: 1/2;
+        padding-top: 30px;
+        text-align: center;
+      }
     }
   }
 
@@ -59,6 +90,10 @@
     grid-template-columns: 1fr 122px 1fr;
     align-items: end;
     height: 122px;
+
+    @media (max-width: $lg) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__intro-the-company {
@@ -67,6 +102,13 @@
     color: $primary-color;
     line-height: 170%;
     text-align: left;
+
+    @media (max-width: $lg) {
+      justify-self: center;
+      max-width: 320px;
+      line-height: 150%;
+      text-align: center;
+    }
   }
 
   &__scroll {
@@ -91,6 +133,10 @@
         transform: translate(0, -50%);
         content: "";
       }
+    }
+
+    @media (max-width: $lg) {
+      display: none;
     }
   }
 }

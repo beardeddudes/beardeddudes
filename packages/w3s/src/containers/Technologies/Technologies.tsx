@@ -102,6 +102,7 @@ const Technologies: FC = () => {
                 <div className={"technologies__content-icon technologies__content-icon--2"}></div>
                 <div className={"technologies__content-icon technologies__content-icon--3"}></div>
                 <div className={"technologies__content-icon technologies__content-icon--4"}></div>
+                <div className={"technologies__content-icon technologies__content-icon--4"}></div>
               </React.Fragment>
             )}
           </div>
