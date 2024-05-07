@@ -3,19 +3,19 @@ import { useNetworkState } from "react-use"
 
 interface IAppProps {
   /* Properties */
-  isDrawerVisible: boolean
+  isFormPopupVisible: boolean
   isOnline: boolean
 
   /* Getters, Setters */
-  setDrawerVisibility: (flag: boolean) => void
+  setFormPopupVisibility: (flag: boolean) => void
 }
 
 type AppProviderProps = PropsWithChildren<Partial<IAppProps>>
 
 const initialAppProps: IAppProps = {
-  isDrawerVisible: false,
+  isFormPopupVisible: false,
   isOnline: false,
-  setDrawerVisibility: () => {},
+  setFormPopupVisibility: () => {},
 }
 
 const AppContext = createContext<IAppProps>(initialAppProps)
@@ -31,9 +31,9 @@ const AppProvider: FC<AppProviderProps> = ({ children, ...props }) => {
   }, [online])
 
   const appContextProps: IAppProps = {
-    isDrawerVisible,
+    isFormPopupVisible: isDrawerVisible,
     isOnline,
-    setDrawerVisibility,
+    setFormPopupVisibility: setDrawerVisibility,
   }
 
   return (

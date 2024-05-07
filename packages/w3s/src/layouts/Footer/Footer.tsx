@@ -1,10 +1,12 @@
 import React, { FC } from "react"
 import { useTranslation } from "react-i18next"
+import { useApp } from "./../../contexts/App"
 
 import "./Footer.scss"
 
 const Footer: FC = () => {
   const { t } = useTranslation("global")
+  const { setFormPopupVisibility } = useApp()
 
   return (
     <React.Fragment>
@@ -19,9 +21,9 @@ const Footer: FC = () => {
               <a className={"footer__link"}>LinkedIn</a>
               <a className={"footer__link"}>Instagram</a>
             </div>
-            <div className={"footer__start-project-btn"}>
+            <button className={"footer__start-project-btn"} onClick={() => setFormPopupVisibility(true)}>
               <span>Start a project</span>
-            </div>
+            </button>
             <div className={"footer__links footer__links--write-up"}>
               <a className={"footer__link"}>hey@cactus.io</a>
               <a className={"footer__link"}>Telegram</a>

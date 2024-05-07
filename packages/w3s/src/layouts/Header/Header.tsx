@@ -1,10 +1,12 @@
 import React, { FC } from "react"
 import { useTranslation } from "react-i18next"
+import { useApp } from "./../../contexts/App"
 
 import "./Header.scss"
 
 const Header: FC = () => {
   const { t } = useTranslation("global")
+  const { setFormPopupVisibility } = useApp()
 
   return (
     <React.Fragment>
@@ -20,7 +22,7 @@ const Header: FC = () => {
           <button className={"header__navigation-btn"}>{t("header.navigation.about")}</button>
           <button className={"header__navigation-btn"}>{t("header.navigation.contacts")}</button>
         </div>
-        <button className={"header__start-project-btn"}>
+        <button className={"header__start-project-btn"} onClick={() => setFormPopupVisibility(true)}>
           <span>{t("header.startProject")}</span>
         </button>
       </div>

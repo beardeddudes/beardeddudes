@@ -1,0 +1,83 @@
+@import "@styles/mixin";
+@import "@styles/variables";
+
+.form-popup {
+  &__body {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: $primary-color;
+  }
+
+  &__close-btn {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+
+    svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    @media (max-width: $lg) {
+      right: 50%;
+      transform: translate(50%, 0);
+    }
+  }
+
+  &__container {
+    max-width: 1020px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  &__title {
+    @include adaptive-value("font-size", 100, 70, 1);
+
+    margin-bottom: 20px;
+    color: $secondary-color;
+    font-weight: 800;
+    line-height: 120%;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__sut-title {
+    @include adaptive-value("font-size", 20, 16, 1);
+    @include adaptive-value("margin-bottom", 100, 100, 1);
+
+    color: $secondary-color;
+    font-weight: 500;
+    line-height: 150%;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__submit-btn {
+    @include adaptive-value("font-size", 18, 18, 1);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 70px;
+    padding: 22px;
+    color: $primary-color;
+    font-weight: 500;
+    line-height: 150%;
+    background-color: $secondary-color;
+    border-radius: 67px;
+  }
+}
