@@ -73,8 +73,8 @@
     &--4 {
       transform: translate(0, -120px);
     }
-
-    @media (width <= 411px) {
+    // stylelint-disable-next-line
+    @media (max-width: 411px) {
       @include adaptive-value("width", 480, 300, 1);
       @include adaptive-value("height", 480, 300, 1);
     }
