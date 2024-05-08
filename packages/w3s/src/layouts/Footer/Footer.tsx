@@ -13,8 +13,8 @@ const Footer: FC = () => {
       <div className={"footer__section"}>
         <div className={"footer__container"}>
           <div className={"footer__collaborate"}>
-            <div className={"footer__questions"}>{t("footer.questions")}</div>
-            <div className={"footer__title"}>{t("footer.title")}</div>
+            <div className={"footer__questions"}>Got a project? Want to collaborate?</div>
+            <div className={"footer__title"}>Get in touch</div>
           </div>
           <div className={"footer__navigation"}>
             <div className={"footer__links footer__links--social"}>
@@ -30,7 +30,7 @@ const Footer: FC = () => {
             </div>
           </div>
           <div className={"footer__all-rights-reserved"}>
-            ©{new Date().getFullYear()}, Cactus. {t("footer.allRightsReserved")}.
+            ©{new Date().getFullYear()}, Cactus. All rights reserved.
           </div>
         </div>
       </div>

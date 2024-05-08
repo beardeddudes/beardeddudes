@@ -15,15 +15,17 @@ const Header: FC = () => {
           cactus
         </a>
         <div className={"header__navigation"}>
-          <button className={"header__navigation-btn"}>{t("header.navigation.weDo")}</button>
-          <button className={"header__navigation-btn"}>{t("header.navigation.technologies")}</button>
-          <button className={"header__navigation-btn"}>{t("header.navigation.process")}</button>
-          <button className={"header__navigation-btn"}>{t("header.navigation.works")}</button>
-          <button className={"header__navigation-btn"}>{t("header.navigation.about")}</button>
-          <button className={"header__navigation-btn"}>{t("header.navigation.contacts")}</button>
+          <button className={"header__navigation-btn"}>We do!</button>
+          <button className={"header__navigation-btn"}>Technologies</button>
+          <button className={"header__navigation-btn"}>Process</button>
+          <button className={"header__navigation-btn"}>Works</button>
+          <button className={"header__navigation-btn"}>About Us</button>
+          <button className={"header__navigation-btn"}>Contacts</button>
         </div>
         <button className={"header__start-project-btn"} onClick={() => setFormPopupVisibility(true)}>
           <span>{t("header.startProject")}</span>
+        <button className={"header__start-project-btn"}>
+          <span>Start a project</span>
         </button>
       </div>
     </React.Fragment>
