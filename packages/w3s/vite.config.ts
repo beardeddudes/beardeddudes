@@ -36,8 +36,8 @@ export default configure(
     react: { swc: { enabled: true }, svg: { enabled: true } },
     fonts: {
       google: {
-        display: "auto",
-        families: [{ name: "Roboto", styles: "wght@400;500;600;700;800;900" }],
+        display: "swap",
+        families: [{ name: "M+PLUS+2", styles: "wght@400;500;600;700;800;900" }],
         preconnect: true,
       },
     },
