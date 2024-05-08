@@ -13,8 +13,13 @@ import { useBreakpoints } from "./../../hooks/useBreakpoints"
 export interface IPerson {
   photo: string
   name: string
-  jobTitle: string
+  position: string
   experience: number
+}
+
+interface IPrinciple {
+  title: string
+  description: string
 }
 
 const AboutUs: FC = () => {
@@ -25,37 +30,37 @@ const AboutUs: FC = () => {
     {
       photo: noImage,
       name: "Jaroslav",
-      jobTitle: "Founder, Teamlead Backend developer",
+      position: "Founder & Principal Backend Developer",
       experience: 15,
     },
     {
       photo: noImage,
       name: "Dmytro",
-      jobTitle: "Co-founder Frontand developer",
+      position: "Co-founder & Frontend Developer",
       experience: 5,
     },
     {
       photo: noImage,
       name: "Julia",
-      jobTitle: "Content manager",
+      position: "Content Manager",
       experience: 9,
     },
     {
       photo: noImage,
-      name: "Lubov",
-      jobTitle: "Data analyst",
+      name: "Liubov",
+      position: "Data Analyst",
       experience: 4,
     },
     {
       photo: noImage,
       name: "Oleh",
-      jobTitle: "UX/UI designer",
+      position: "UX/UI Designer",
       experience: 8,
     },
     {
       photo: noImage,
-      name: "Viktor",
-      jobTitle: "Manager",
+      name: "Victor",
+      position: "Project Manager",
       experience: 7,
     },
   ]
@@ -77,28 +82,23 @@ const AboutUs: FC = () => {
   return (
     <section className={"about-us__section"}>
       <div className={"about-us__container"}>
-        <h2 className={"about-us__title"}>about us</h2>
-        <div className={"about-us__info"}>
+        <h2 className={"about-us__title"}>{t("main.aboutUs.title")}</h2>
+        <div className={"about-us__describe-the-company"}>
           <div></div>
           <div className={"about-us__description"}>
             <div className={"about-us__text"}>
-              <p>
-                Gleam is a clean and modern photography WordPress theme for creative photographers websites. You can use
-                it as a portfolio to showcase your work.
-              </p>
-              <p>WordPress theme for creative photographers websites</p>
+              {description.map((elt, key) => {
+                return <p key={key}>{elt}</p>
+              })}
             </div>
-            <div className={"about-us__indicators"}>
+            <div className={"about-us__statistic"}>
               <div className={"about-us__indicator"}>
                 <span>20</span>
-                <p>
-                  Discover outstanding <br />
-                  websites
-                </p>
+                <p dangerouslySetInnerHTML={{ __html: t("main.aboutUs.firstCuriousIndicator") }}></p>
               </div>
               <div className={"about-us__indicator"}>
                 <span>10</span>
-                <p>WordPress theme for creative photographers websites</p>
+                <p>{t("main.aboutUs.secondCuriousIndicator")}</p>
               </div>
             </div>
           </div>
@@ -126,36 +126,19 @@ const AboutUs: FC = () => {
             )
           }
         </div>
-        <h4 className={"about-us__sub-title"}>
-          Quality is <br /> 100% basic
-        </h4>
+        <h4
+          className={"about-us__our-team-title"}
+          dangerouslySetInnerHTML={{ __html: t("main.aboutUs.ourTeamPrincipleTitle") }}
+        ></h4>
         <ul className={"about-us__principles principles"}>
-          <li className={"principles__item"}>
-            <h5 className={"principles__heading"}>Quality</h5>
-            <p className={"principles__text"}>
-              Discover outstanding websites that cater to online businesses, showcasing a wide range of products and
-              services across diverse
-            </p>
-          </li>
-          <li className={"principles__item"}>
-            <h5 className={"principles__heading"}>Time</h5>
-            <p className={"principles__text"}>
-              Discover outstanding websites that cater to online businesses, showcasing a wide range of products and
-              services across diverse Discover outstanding websites that cater to online businesses, showcasing a wide
-              range of products and services across diverse
-            </p>
-          </li>
-          <li className={"principles__item"}>
-            <h5 className={"principles__heading"}>Money</h5>
-            <p className={"principles__text"}>
-              Discover outstanding websites that cater to online businesses, showcasing a wide range of products and
-              services across diverse
-            </p>
-          </li>
-          <li className={"principles__item"}>
-            <h5 className={"principles__heading"}>Other</h5>
-            <p className={"principles__text"}>Discover outstanding websites that cater to online businesses.</p>
-          </li>
+          {principles.map((elt, key) => {
+            return (
+              <li className={"principles__item"} key={key}>
+                <h5 className={"principles__title"}>{elt.title}</h5>
+                <p className={"principles__description"}>{elt.description}</p>
+              </li>
+            )
+          })}
         </ul>
       </div>
     </section>

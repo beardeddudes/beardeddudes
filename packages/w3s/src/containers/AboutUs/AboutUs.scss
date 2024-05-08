@@ -1,5 +1,5 @@
-@import "@styles/mixin";
 @import "@styles/variables";
+@import "@styles/mixin";
 
 .swiper-slide {
   height: auto;
@@ -25,7 +25,7 @@
     text-transform: uppercase;
   }
 
-  &__info {
+  &__describe-the-company {
     @include adaptive-value("margin-bottom", 266, 80, 1);
 
     display: grid;
@@ -58,7 +58,7 @@
     }
   }
 
-  &__indicators {
+  &__statistic {
     @include adaptive-value("gap", 100, 40, 1);
 
     display: flex;
@@ -86,7 +86,7 @@
     }
   }
 
-  &__sub-title {
+  &__our-team-title {
     @include adaptive-value("font-size", 60, 60, 1);
     @include adaptive-value("margin-bottom", 80, 40, 1);
 
@@ -94,7 +94,7 @@
     font-weight: 800;
   }
 
-  &__team-list {
+  &__our-team {
     @include adaptive-value("margin-bottom", 210, 80, 1);
 
     @media (min-width: $lg) {
@@ -124,14 +124,14 @@
     align-items: start;
   }
 
-  &__heading {
+  &__title {
     @include adaptive-value("font-size", 24, 24, 1);
 
     margin-bottom: 26px;
     font-weight: 800;
   }
 
-  &__text {
+  &__description {
     color: rgba(226, 226, 226, 0.5);
     line-height: 150%;
     text-align: left;
