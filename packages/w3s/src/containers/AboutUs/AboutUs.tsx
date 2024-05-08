@@ -1,9 +1,14 @@
 import React, { FC } from "react"
 
+import "swiper/css"
+import { Autoplay } from "swiper/modules"
+import { Swiper, SwiperSlide } from "swiper/react"
+
 import "./AboutUs.scss"
 
 import noImage from "./../../assets/images/no-image-placeholder.png"
 import PersonCard from "./../../components/PersonCard/PersonCard"
+import { useBreakpoints } from "./../../hooks/useBreakpoints"
 
 export interface IPerson {
   photo: string
@@ -13,6 +18,9 @@ export interface IPerson {
 }
 
 const AboutUs: FC = () => {
+  const { isTablet } = useBreakpoints()
+
+  //prettier-ignore
   const team = [
     {
       photo: noImage,
@@ -51,6 +59,21 @@ const AboutUs: FC = () => {
       experience: 7,
     },
   ]
+
+  const swiperOptions = {
+    breakpoints: {
+      680: { spaceBetween: 20, slidesPerView: 2.2 },
+      320: { spaceBetween: 20, slidesPerView: 1.4 },
+    },
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: true,
+    },
+    speed: 1000,
+    modules: [Autoplay],
+    loop: true,
+    simulateTouch: true,
+  }
   return (
     <section className={"about-us__section"}>
       <div className={"about-us__container"}>
@@ -82,9 +105,26 @@ const AboutUs: FC = () => {
         </div>
         <h4 className={"about-us__sub-title"}>Our friendly team</h4>
         <div className={"about-us__team-list"}>
-          {team.map((person, key) => {
-            return <PersonCard key={key} person={person} />
-          })}
+          {
+            //prettier-ignore
+            isTablet 
+            ? (
+            <Swiper {...swiperOptions} className={"about-us__swiper"}>
+              {team.map((person, key) => {
+                return (
+                  <SwiperSlide key={key}>
+                    <PersonCard person={person} />
+                  </SwiperSlide>
+                )
+              })}
+            </Swiper>
+            ) 
+            : (
+               team.map((person, key) => {
+               return <PersonCard key={key} person={person} />
+               })
+            )
+          }
         </div>
         <h4 className={"about-us__sub-title"}>
           Quality is <br /> 100% basic

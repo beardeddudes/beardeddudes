@@ -1,6 +1,10 @@
 @import "@styles/mixin";
 @import "@styles/variables";
 
+.swiper-slide {
+  height: auto;
+}
+
 .about-us {
   &__section {
     color: $secondary-color;
@@ -93,9 +97,17 @@
   &__team-list {
     @include adaptive-value("margin-bottom", 210, 80, 1);
 
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-    gap: 20px;
+    @media (min-width: $lg) {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 20px;
+    }
+  }
+
+  &__swiper {
+    @media (max-width: $lg) {
+      overflow: visible;
+    }
   }
 }
 
