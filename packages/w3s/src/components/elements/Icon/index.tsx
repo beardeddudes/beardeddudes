@@ -1,13 +1,15 @@
 import { FC, SVGProps } from "react"
 
 import { ReactComponent as CloseBtnIcon } from "./icons/close-btn.svg"
+import { ReactComponent as ReactIcon } from "./icons/react.svg"
 import { ReactComponent as ViewDarkIcon } from "./icons/view-dark.svg"
 import { ReactComponent as ViewLightIcon } from "./icons/view-light.svg"
 
 const icons = {
-  ["view-light"]: ViewLightIcon,
-  ["view-dark"]: ViewDarkIcon,
-  ["close-btn"]: CloseBtnIcon,
+  "close-btn": CloseBtnIcon,
+  "react": ReactIcon,
+  "view-dark": ViewDarkIcon,
+  "view-light": ViewLightIcon,
 } as const
 
 export type IconName = keyof typeof icons
