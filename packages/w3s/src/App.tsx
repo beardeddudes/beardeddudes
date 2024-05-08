@@ -7,18 +7,14 @@ import { AppProvider } from "./contexts/App"
 import Router from "./pages/Router"
 
 import globalEn from "./locales/en/global.json"
-import globalUa from "./locales/ua/global.json"
 
 i18next.init({
   fallbackLng: "en",
-  interpolation: { escapeValue: false },
   lng: "auto",
+  interpolation: { escapeValue: false },
   resources: {
     en: {
       global: globalEn,
-    },
-    ua: {
-      global: globalUa,
     },
   },
 })
