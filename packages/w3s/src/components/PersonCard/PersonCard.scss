@@ -1,5 +1,5 @@
-@import "@styles/mixin";
 @import "@styles/variables";
+@import "@styles/mixin";
 
 .person-card {
   &__article {
@@ -46,7 +46,7 @@
     text-align: center;
   }
 
-  &__job-title {
+  &__position {
     display: flex;
     flex: 1 1 auto;
     align-items: start;

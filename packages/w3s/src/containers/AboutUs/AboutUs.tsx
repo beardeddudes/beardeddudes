@@ -17,6 +17,12 @@ export interface IPerson {
   experience: number
 }
 
+import PersonCard, { IPerson } from "./../../components/PersonCard/PersonCard"
+
+import noImage from "./../../assets/images/no-image-placeholder.png"
+
+import "./AboutUs.scss"
+
 interface IPrinciple {
   title: string
   description: string
@@ -80,28 +86,50 @@ const AboutUs: FC = () => {
     simulateTouch: true,
   }
   return (
-    <section className={"about-us__section"}>
-      <div className={"about-us__container"}>
-        <h2 className={"about-us__title"}>{t("main.aboutUs.title")}</h2>
-        <div className={"about-us__describe-the-company"}>
-          <div></div>
-          <div className={"about-us__description"}>
-            <div className={"about-us__text"}>
-              {description.map((elt, key) => {
-                return <p key={key}>{elt}</p>
-              })}
-            </div>
-            <div className={"about-us__statistic"}>
-              <div className={"about-us__indicator"}>
-                <span>20</span>
-                <p dangerouslySetInnerHTML={{ __html: t("main.aboutUs.firstCuriousIndicator") }}></p>
+    <React.Fragment>
+      <section className={"about-us__section"}>
+        <div className={"about-us__container"}>
+          <h2 className={"about-us__title"}>{t("main.aboutUs.title")}</h2>
+          <div className={"about-us__describe-the-company"}>
+            <div></div>
+            <div className={"about-us__description"}>
+              <div className={"about-us__text"}>
+                {description.map((elt, key) => {
+                  return <p key={key}>{elt}</p>
+                })}
               </div>
-              <div className={"about-us__indicator"}>
-                <span>10</span>
-                <p>{t("main.aboutUs.secondCuriousIndicator")}</p>
+              <div className={"about-us__statistic"}>
+                <div className={"about-us__indicator"}>
+                  <span>20</span>
+                  <p dangerouslySetInnerHTML={{ __html: t("main.aboutUs.firstCuriousIndicator") }}></p>
+                </div>
+                <div className={"about-us__indicator"}>
+                  <span>10</span>
+                  <p>{t("main.aboutUs.secondCuriousIndicator")}</p>
+                </div>
               </div>
             </div>
           </div>
+          <h4 className={"about-us__our-team-title"}>{t("main.aboutUs.ourTeamPersonTitle")}</h4>
+          <div className={"about-us__our-team"}>
+            {team.map((elt, key) => {
+              return <PersonCard person={elt} key={key} />
+            })}
+          </div>
+          <h4
+            className={"about-us__our-team-title"}
+            dangerouslySetInnerHTML={{ __html: t("main.aboutUs.ourTeamPrincipleTitle") }}
+          ></h4>
+          <ul className={"about-us__principles principles"}>
+            {principles.map((elt, key) => {
+              return (
+                <li className={"principles__item"} key={key}>
+                  <h5 className={"principles__title"}>{elt.title}</h5>
+                  <p className={"principles__description"}>{elt.description}</p>
+                </li>
+              )
+            })}
+          </ul>
         </div>
         <h4 className={"about-us__sub-title"}>Our friendly team</h4>
         <div className={"about-us__team-list"}>
@@ -142,6 +170,8 @@ const AboutUs: FC = () => {
         </ul>
       </div>
     </section>
+      </section>
+    </React.Fragment>
   )
 }
 
