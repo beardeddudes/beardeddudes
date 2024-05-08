@@ -38,6 +38,9 @@
   }
 
   &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
     max-width: 1020px;
     margin: 0 auto;
     padding: 0 20px;
@@ -58,11 +61,29 @@
     @include adaptive-value("font-size", 20, 16, 1);
     @include adaptive-value("margin-bottom", 100, 100, 1);
 
+    align-self: center;
     color: $secondary-color;
     font-weight: 500;
     line-height: 150%;
     text-align: center;
     text-transform: uppercase;
+
+    @media (max-width: $md) {
+      max-width: 350px;
+    }
+  }
+
+  &__form-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding-bottom: 60px;
+    column-gap: 40px;
+    //  row-gap: 39px;
+    row-gap: 69px;
+
+    @media (max-width: $lg) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__submit-btn {
@@ -79,5 +100,76 @@
     line-height: 150%;
     background-color: $secondary-color;
     border-radius: 67px;
+  }
+}
+
+.form-popup-input {
+  position: relative;
+  height: 45px;
+  border-bottom: 1px solid rgba(226, 226, 226, 0.5);
+
+  &--big {
+    @media (min-width: $lg) {
+      grid-column: 1/3;
+    }
+  }
+
+  &__field {
+    width: 100%;
+    height: 100%;
+    padding: 1px 1px 17px;
+    color: $secondary-color;
+    text-align: left;
+
+    &:focus {
+      + .form-popup-input__label {
+        @include adaptive-value("font-size", 12, 12, 1);
+
+        bottom: 47px;
+        color: rgba(226, 226, 226, 0.5);
+        line-height: 150%;
+        transition: all 0.3s;
+      }
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:focus {
+      transition: background-color 0s 600000s !important;
+      -webkit-text-fill-color: $secondary-color !important;
+
+      + .form-popup-input__label {
+        @include adaptive-value("font-size", 12, 12, 1);
+
+        bottom: 47px;
+        color: rgba(226, 226, 226, 0.5);
+        line-height: 150%;
+        transition: all 0.3s;
+      }
+    }
+  }
+
+  &__label {
+    @include adaptive-value("font-size", 18, 18, 1);
+
+    position: absolute;
+    bottom: 17px;
+    left: 0;
+    color: $secondary-color;
+    line-height: 150%;
+    transition: all 0.3s;
+
+    &.label-top {
+      @include adaptive-value("font-size", 12, 12, 1);
+
+      bottom: 47px;
+      color: rgba(226, 226, 226, 0.5);
+      line-height: 150%;
+      transition: all 0.3s;
+    }
+  }
+
+  &__error {
+    padding-top: 10px;
+    color: red;
   }
 }
