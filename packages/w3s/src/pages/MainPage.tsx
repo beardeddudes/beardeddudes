@@ -2,15 +2,16 @@ import React, { FC } from "react"
 
 import AboutUs from "./../containers/AboutUs/AboutUs"
 import DevelopmentProcess from "./../containers/DevelopmentProcess/DevelopmentProcess"
-import FormPopup from "./../containers/FormPopup/FormPopup"
 import Hero from "./../containers/Hero/Hero"
+import LetsGetStartedForm from "./../containers/LetsStartedForm/LetsStartedForm"
 import Technologies from "./../containers/Technologies/Technologies"
 import WeDo from "./../containers/WeDo/WeDo"
 import Works from "./../containers/Works/Works"
+
 import { useApp } from "./../contexts/App"
 
 const MainPage: FC = () => {
-  const { isFormPopupVisible } = useApp()
+  const { isLetsStartedFormVisibile } = useApp()
 
   return (
     <React.Fragment>
@@ -20,7 +21,7 @@ const MainPage: FC = () => {
       <DevelopmentProcess />
       <Works />
       <AboutUs />
-      {isFormPopupVisible && <FormPopup />}
+      {isLetsStartedFormVisibile && <LetsGetStartedForm />}
     </React.Fragment>
   )
 }

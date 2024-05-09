@@ -1,26 +1,13 @@
-import React, { FC } from "react"
-
-import "swiper/css"
-import { Autoplay } from "swiper/modules"
+import { FC } from "react"
 import { Swiper, SwiperSlide } from "swiper/react"
-
-import "./AboutUs.scss"
-
-import noImage from "./../../assets/images/no-image-placeholder.png"
-import PersonCard from "./../../components/PersonCard/PersonCard"
-import { useBreakpoints } from "./../../hooks/useBreakpoints"
-
-export interface IPerson {
-  photo: string
-  name: string
-  position: string
-  experience: number
-}
+import { SwiperOptions } from "swiper/types"
 
 import PersonCard, { IPerson } from "./../../components/PersonCard/PersonCard"
+import { useBreakpoints } from "./../../hooks/useBreakpoints"
 
 import noImage from "./../../assets/images/no-image-placeholder.png"
 
+import "swiper/css"
 import "./AboutUs.scss"
 
 interface IPrinciple {
@@ -31,9 +18,16 @@ interface IPrinciple {
 const AboutUs: FC = () => {
   const { isTablet } = useBreakpoints()
 
-  //prettier-ignore
-  const team = [
-  const team: IPerson[] = [
+  const swiperOptions: SwiperOptions = {
+    breakpoints: {
+      680: { spaceBetween: 20, slidesPerView: 2.2 },
+      320: { spaceBetween: 20, slidesPerView: 1.4 },
+    },
+    loop: true,
+    simulateTouch: true,
+  }
+
+  const persons: IPerson[] = [
     {
       photo: noImage,
       name: "Jaroslav",
@@ -70,22 +64,8 @@ const AboutUs: FC = () => {
       position: "Project Manager",
       experience: 7,
     },
-  ]
+  ] as const
 
-  const swiperOptions = {
-    breakpoints: {
-      680: { spaceBetween: 20, slidesPerView: 2.2 },
-      320: { spaceBetween: 20, slidesPerView: 1.4 },
-    },
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: true,
-    },
-    speed: 1000,
-    modules: [Autoplay],
-    loop: true,
-    simulateTouch: true,
-  }
   const principles: IPrinciple[] = [
     {
       title: "Quality",
@@ -110,81 +90,59 @@ const AboutUs: FC = () => {
   ] as const
 
   return (
-    <React.Fragment>
-      <section className={"about-us__section"}>
-        <div className={"about-us__container"}>
-          <h2 className={"about-us__title"}>About Us</h2>
-          <div className={"about-us__describe-the-company"}>
-            <div></div>
-            <div className={"about-us__description"}>
-              <div className={"about-us__text"}>
+    <section className={"about-us__section"}>
+      <div className={"about-us__container"}>
+        <h2 className={"about-us__title"}>About Us</h2>
+        <div className={"about-us__describe-the-company"}>
+          <div></div>
+          <div className={"about-us__description"}>
+            <div className={"about-us__text"}>
+              <p>
+                Gleam is a clean and modern photography WordPress theme for creative photographers websites. You can use
+                it as a portfolio to showcase your work.
+              </p>
+              <p>WordPress theme for creative photographers websites...</p>
+            </div>
+            <div className={"about-us__statistic"}>
+              <div className={"about-us__indicator"}>
+                <span>20</span>
                 <p>
-                  Gleam is a clean and modern photography WordPress theme for creative photographers websites. You can
-                  use it as a portfolio to showcase your work.
+                  Discover outstanding <br /> websites
                 </p>
-                <p>WordPress theme for creative photographers websites...</p>
               </div>
-              <div className={"about-us__statistic"}>
-                <div className={"about-us__indicator"}>
-                  <span>20</span>
-                  <p>
-                    Discover outstanding <br /> websites
-                  </p>
-                </div>
-                <div className={"about-us__indicator"}>
-                  <span>10</span>
-                  <p>WordPress theme for creative photographers websites</p>
-                </div>
+              <div className={"about-us__indicator"}>
+                <span>10</span>
+                <p>WordPress theme for creative photographers websites</p>
               </div>
             </div>
           </div>
-          <h4 className={"about-us__our-team-title"}>Our friendly team</h4>
-          <div className={"about-us__our-team"}>
-            {team.map((elt, key) => {
-              return <PersonCard person={elt} key={key} />
-            })}
-          </div>
-          <h4 className={"about-us__our-team-title"}>
-            Quality is <br /> 100% basic
-          </h4>
-          <ul className={"about-us__principles principles"}>
-            {principles.map((elt, key) => {
-              return (
-                <li className={"principles__item"} key={key}>
-                  <h5 className={"principles__title"}>{elt.title}</h5>
-                  <p className={"principles__description"}>{elt.description}</p>
-                </li>
-              )
-            })}
-          </ul>
         </div>
-        <h4 className={"about-us__sub-title"}>Our friendly team</h4>
-        <div className={"about-us__team-list"}>
+        <h4 className={"about-us__our-team-title"}>Our friendly team</h4>
+        <div className={"about-us__our-team"}>
           {
-            //prettier-ignore
-            isTablet 
-            ? (
-            <Swiper {...swiperOptions} className={"about-us__swiper"}>
-              {team.map((person, key) => {
-                return (
-                  <SwiperSlide key={key}>
-                    <PersonCard person={person} />
-                  </SwiperSlide>
-                )
-              })}
-            </Swiper>
-            ) 
-            : (
-               team.map((person, key) => {
-               return <PersonCard key={key} person={person} />
-               })
-            )
+            // prettier-ignore
+            isTablet
+              ? (
+                <Swiper {...swiperOptions} className={"about-us__swiper"}>
+                  {persons.map((elt, key) => {
+                    return (
+                      <SwiperSlide key={key}>
+                        <PersonCard person={elt} />
+                      </SwiperSlide>
+                    )
+                  })}
+                </Swiper>
+              )
+              : (
+                persons.map((elt, key) => {
+                  return <PersonCard key={key} person={elt} />
+                })
+              )
           }
         </div>
-        <h4
-          className={"about-us__our-team-title"}
-          dangerouslySetInnerHTML={{ __html: t("main.aboutUs.ourTeamPrincipleTitle") }}
-        ></h4>
+        <h4 className={"about-us__our-team-title"}>
+          Quality is <br /> 100% basic
+        </h4>
         <ul className={"about-us__principles principles"}>
           {principles.map((elt, key) => {
             return (
@@ -197,8 +155,6 @@ const AboutUs: FC = () => {
         </ul>
       </div>
     </section>
-      </section>
-    </React.Fragment>
   )
 }
 

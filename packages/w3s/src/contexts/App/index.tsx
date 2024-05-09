@@ -3,37 +3,46 @@ import { useNetworkState } from "react-use"
 
 interface IAppProps {
   /* Properties */
-  isFormPopupVisible: boolean
+  isDrawerVisible: boolean
+  isLetsStartedFormVisibile: boolean
   isOnline: boolean
 
   /* Getters, Setters */
-  setFormPopupVisibility: (flag: boolean) => void
+  setDrawerVisibility: (flag: boolean) => void
+  setLetsStartedFormVisibility: (flag: boolean) => void
 }
 
 type AppProviderProps = PropsWithChildren<Partial<IAppProps>>
 
 const initialAppProps: IAppProps = {
-  isFormPopupVisible: false,
+  isDrawerVisible: false,
+  isLetsStartedFormVisibile: false,
   isOnline: false,
-  setFormPopupVisibility: () => {},
+
+  setDrawerVisibility: () => {},
+  setLetsStartedFormVisibility: () => {},
 }
 
 const AppContext = createContext<IAppProps>(initialAppProps)
 
 const AppProvider: FC<AppProviderProps> = ({ children, ...props }) => {
   const { online } = useNetworkState()
-  const [isOnline, setOnline] = useState<boolean>(online || false)
 
   const [isDrawerVisible, setDrawerVisibility] = useState<boolean>(false)
+  const [isLetsStartedFormVisibile, setLetsStartedFormVisibility] = useState<boolean>(false)
+  const [isOnline, setOnline] = useState<boolean>(online || false)
 
   useEffect(() => {
     setOnline(online || false)
   }, [online])
 
   const appContextProps: IAppProps = {
-    isFormPopupVisible: isDrawerVisible,
+    isDrawerVisible,
+    isLetsStartedFormVisibile,
     isOnline,
-    setFormPopupVisibility: setDrawerVisibility,
+
+    setDrawerVisibility,
+    setLetsStartedFormVisibility,
   }
 
   return (

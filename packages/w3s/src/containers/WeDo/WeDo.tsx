@@ -1,13 +1,10 @@
-import React, { FC } from "react"
+import { FC } from "react"
 
 import "./WeDo.scss"
 
 interface IWeDo {
   scope: string
-  branches: {
-    title: string
-    description: string
-  }[]
+  branches: { title: string; description: string }[]
 }
 
 const WeDo: FC = () => {
@@ -70,38 +67,36 @@ const WeDo: FC = () => {
   ] as const
 
   return (
-    <React.Fragment>
-      <section className={"wedo__section"}>
-        <div className={"wedo__heading"}>
-          <div className={"wedo__heading-little-inspire-phrase"}>
-            Everything
-            <br />
-            your business needs on the web
-          </div>
-          <h2 className={"wedo__heading-title"}>We do</h2>
+    <section className={"wedo__section"}>
+      <div className={"wedo__heading"}>
+        <div className={"wedo__heading-little-inspire-phrase"}>
+          Everything
+          <br />
+          your business needs on the web
         </div>
-        <div className={"wedo__content"}>
-          {exactlyWhatWeDo.map((wedo, key) => {
-            return (
-              <article className={"wedo__item"} key={key}>
-                <h3 className={"wedo__scope"}>{wedo.scope}</h3>
-                <ul className={"wedo__branches"}>
-                  {wedo.branches.map((elt, key) => {
-                    return (
-                      <li className={"wedo__branch-wrapper"} key={key}>
-                        <div className={"wedo__branch"}>
-                          <h4 className={"wedo__branch-title"}>{elt.title}</h4>
-                        </div>
-                      </li>
-                    )
-                  })}
-                </ul>
-              </article>
-            )
-          })}
-        </div>
-      </section>
-    </React.Fragment>
+        <h2 className={"wedo__heading-title"}>We do</h2>
+      </div>
+      <div className={"wedo__content"}>
+        {exactlyWhatWeDo.map((wedo, key) => {
+          return (
+            <article className={"wedo__item"} key={key}>
+              <h3 className={"wedo__scope"}>{wedo.scope}</h3>
+              <ul className={"wedo__branches"}>
+                {wedo.branches.map((elt, key) => {
+                  return (
+                    <li className={"wedo__branch-wrapper"} key={key}>
+                      <div className={"wedo__branch"}>
+                        <h4 className={"wedo__branch-title"}>{elt.title}</h4>
+                      </div>
+                    </li>
+                  )
+                })}
+              </ul>
+            </article>
+          )
+        })}
+      </div>
+    </section>
   )
 }
 
