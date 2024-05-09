@@ -9,7 +9,6 @@
     "@gsap/react": "~2.1.1",
     "@studio-freight/react-lenis": "~0.0.47",
     "formik": "~2.4.5",
-    "i18next": "~23.11.3",
     "lodash": "~4.17.21",
     "react": "~18.3.1",
     "react-dom": "~18.3.1",
