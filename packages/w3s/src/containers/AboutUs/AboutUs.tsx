@@ -33,6 +33,7 @@ const AboutUs: FC = () => {
 
   //prettier-ignore
   const team = [
+  const team: IPerson[] = [
     {
       photo: noImage,
       name: "Jaroslav",
@@ -85,41 +86,67 @@ const AboutUs: FC = () => {
     loop: true,
     simulateTouch: true,
   }
+  const principles: IPrinciple[] = [
+    {
+      title: "Quality",
+      description:
+        "Discover outstanding websites that cater to online businesses, showcasing a wide range of products and services across diverse",
+    },
+    {
+      title: "Time",
+      description:
+        "Discover outstanding websites that cater to online businesses, showcasing a wide range of products and services across diverse Discover outstanding websites that cater to online businesses, showcasing a wide range of products and services across diverse",
+    },
+    {
+      title: "Money",
+      description:
+        "Discover outstanding websites that cater to online businesses, showcasing a wide range of products and services across diverse",
+    },
+    {
+      title: "Other",
+      description:
+        "Discover outstanding websites that cater to online businesses, showcasing a wide range of products and services across diverse Discover outstanding websites that cater to online businesses, showcasing a wide range of products and services across diverse",
+    },
+  ] as const
+
   return (
     <React.Fragment>
       <section className={"about-us__section"}>
         <div className={"about-us__container"}>
-          <h2 className={"about-us__title"}>{t("main.aboutUs.title")}</h2>
+          <h2 className={"about-us__title"}>About Us</h2>
           <div className={"about-us__describe-the-company"}>
             <div></div>
             <div className={"about-us__description"}>
               <div className={"about-us__text"}>
-                {description.map((elt, key) => {
-                  return <p key={key}>{elt}</p>
-                })}
+                <p>
+                  Gleam is a clean and modern photography WordPress theme for creative photographers websites. You can
+                  use it as a portfolio to showcase your work.
+                </p>
+                <p>WordPress theme for creative photographers websites...</p>
               </div>
               <div className={"about-us__statistic"}>
                 <div className={"about-us__indicator"}>
                   <span>20</span>
-                  <p dangerouslySetInnerHTML={{ __html: t("main.aboutUs.firstCuriousIndicator") }}></p>
+                  <p>
+                    Discover outstanding <br /> websites
+                  </p>
                 </div>
                 <div className={"about-us__indicator"}>
                   <span>10</span>
-                  <p>{t("main.aboutUs.secondCuriousIndicator")}</p>
+                  <p>WordPress theme for creative photographers websites</p>
                 </div>
               </div>
             </div>
           </div>
-          <h4 className={"about-us__our-team-title"}>{t("main.aboutUs.ourTeamPersonTitle")}</h4>
+          <h4 className={"about-us__our-team-title"}>Our friendly team</h4>
           <div className={"about-us__our-team"}>
             {team.map((elt, key) => {
               return <PersonCard person={elt} key={key} />
             })}
           </div>
-          <h4
-            className={"about-us__our-team-title"}
-            dangerouslySetInnerHTML={{ __html: t("main.aboutUs.ourTeamPrincipleTitle") }}
-          ></h4>
+          <h4 className={"about-us__our-team-title"}>
+            Quality is <br /> 100% basic
+          </h4>
           <ul className={"about-us__principles principles"}>
             {principles.map((elt, key) => {
               return (
