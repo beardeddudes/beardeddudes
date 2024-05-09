@@ -23,3 +23,19 @@ div#root {
   min-height: 100vh;
   overflow-x: hidden;
 }
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+
+& [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
