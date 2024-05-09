@@ -1,74 +1,57 @@
-import { FC } from "react"
+import React, { FC } from "react"
 
-import WorkCard from "../../components/WorkCard/WorkCard"
+import WorkCard, { EWorkCardTheme, IWork } from "../../components/WorkCard/WorkCard"
+
+import noImage from "./../../assets/images/no-image-placeholder.png"
+
 import "./Works.scss"
-
-export interface IWork {
-  title: string
-  description: string[]
-  technologies: {
-    technologiesTitle: string
-    technologiesList: string[]
-  }
-  tools: {
-    toolsTitle: string
-    toolsList: []
-  }
-}
 
 const Works: FC = () => {
   const works: IWork[] = [
     {
-      title: "Vyroby-22",
+      awesomeGraphic: noImage,
+      title: "VYROBY 22",
       description: [
         "Gleam is a clean and modern photography WordPress theme for creative photographers websites. You can use it as a portfolio to showcase your work",
         "WordPress theme for creative photographers websites. You can use it as a portfolio to showcase your work",
       ],
-      technologies: {
-        technologiesTitle: "We did in the project",
-        technologiesList: ["Ux/Ui", "Frontend", "Backend", "Data-analysis"],
-      },
-      tools: {
-        toolsTitle: "Used tools:",
-        toolsList: [],
-      },
+      whatWeDid: ["Ux/Ui", "Frontend", "Backend", "Data-analysis"],
+      toolsUsed: ["react", "react", "react", "react", "react"],
     },
     {
+      awesomeGraphic: noImage,
       title: "Maje",
       description: [
         "Gleam is a clean and modern photography WordPress theme for creative photographers websites. You can use it as a portfolio to showcase your work",
         "WordPress theme for creative photographers websites. You can use it as a portfolio to showcase your work",
       ],
-      technologies: {
-        technologiesTitle: "We did in the project",
-        technologiesList: ["Frontend", "Backend"],
-      },
-      tools: {
-        toolsTitle: "Used tools:",
-        toolsList: [],
-      },
+      whatWeDid: ["Frontend"],
+      toolsUsed: ["react", "react", "react"],
     },
   ]
 
   return (
-    <section className={"works__section"}>
-      <h2 className={"works__title"}>
-        <span></span>
-        works<span></span>
-        works<span></span>
-        works<span></span>
-        works<span></span>
-        works<span></span>
-      </h2>
-      <div className={"works__container"}>
-        <div className={"works__works"}>
-          {works.map((work, key) => {
-            const isEven = key % 2 === 0
-            return <WorkCard key={key} work={work} theme={`${isEven ? "dark" : "light"}`} />
-          })}
+    <React.Fragment>
+      <section className={"works__section"}>
+        <h2 className={"works__ticker"}>
+          <span></span>
+          works<span></span>
+          works<span></span>
+          works<span></span>
+          works<span></span>
+          works<span></span>
+          <span></span>
+        </h2>
+        <div className={"works__container"}>
+          <div className={"works__works"}>
+            {works.map((work, key) => {
+              const isEven = key % 2 === 0
+              return <WorkCard work={work} theme={!isEven ? EWorkCardTheme.Light : EWorkCardTheme.Dark} key={key} />
+            })}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </React.Fragment>
   )
 }
 

@@ -1,22 +1,14 @@
-@import "@styles/mixin";
 @import "@styles/variables";
+@import "@styles/mixin";
 
 .works {
   &__section {
     @include adaptive-value("padding-bottom", 200, 200, 1);
 
     background-color: $primary-color;
-    //  overflow-x: hidden;
   }
 
-  &__container {
-    max-width: $container;
-    margin: 0 auto;
-    padding-right: 20px;
-    padding-left: 20px;
-  }
-
-  &__title {
+  &__ticker {
     @include adaptive-value("font-size", 100, 100, 1);
     @include adaptive-value("margin-bottom", 66, 72, 1);
 
@@ -37,6 +29,13 @@
       background-color: $secondary-color;
       border-radius: 50%;
     }
+  }
+
+  &__container {
+    max-width: $container;
+    margin: 0 auto;
+    padding-right: 20px;
+    padding-left: 20px;
   }
 
   &__works {

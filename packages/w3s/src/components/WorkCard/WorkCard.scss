@@ -1,5 +1,5 @@
-@import "@styles/mixin";
 @import "@styles/variables";
+@import "@styles/mixin";
 
 .work-card {
   &__article {
@@ -65,13 +65,13 @@
     @include adaptive-value("gap", 90, 40, 1);
 
     display: flex;
-    //  gap: 90px;
+
     @media (max-width: $xl) {
       flex-direction: column;
     }
   }
 
-  &__image {
+  &__awesome-graphic {
     @include adaptive-value("flex-basis", 720, 100, 1);
 
     position: relative;
@@ -162,13 +162,13 @@
     }
   }
 
-  &__technologies-title {
+  &__what-we-did-title {
     margin-bottom: 14px;
     font-weight: 700;
     line-height: 170%;
   }
 
-  &__technologies {
+  &__what-we-did {
     display: flex;
     flex: 1 1 auto;
     flex-direction: column;
@@ -198,7 +198,7 @@
     }
   }
 
-  &__tools {
+  &__tools-wrapper {
     display: flex;
     align-items: center;
     justify-content: end;
@@ -221,7 +221,7 @@
     }
   }
 
-  &__tools-list {
+  &__tools-used {
     display: flex;
     padding-right: 20px;
     font-weight: 700;

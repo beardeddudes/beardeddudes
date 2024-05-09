@@ -1,53 +1,69 @@
-import { FC } from "react"
+import React, { FC } from "react"
 
-import { SvgIcon } from "../elements/Icon"
+import { IconName, SvgIcon } from "../elements/Icon"
 
-import { IWork } from "../../containers/Works/Works"
-import noImage from "./../../assets/images/no-image-placeholder.png"
 import "./WorkCard.scss"
 
+export enum EWorkCardTheme {
+  Light = 0x00_00_00_01,
+  Dark,
+}
+
+export interface IWork {
+  awesomeGraphic: string
+  title: string
+  description: string[]
+  whatWeDid: string[]
+  toolsUsed: IconName[]
+}
+
 interface IWorkCardProps {
-  theme?: "light" | "dark"
+  theme?: EWorkCardTheme
   work: IWork
 }
 
-const WorkCard: FC<IWorkCardProps> = ({ theme = "dark", work }) => {
+const WorkCard: FC<IWorkCardProps> = ({ theme = EWorkCardTheme.Light, work }) => {
   return (
-    <article className={`work-card__article ${theme === "light" ? "_light" : "_dark"}`}>
-      <div className={"work-card__body"}>
-        <div className={"work-card__image"}>
-          <img src={noImage} alt={"project image"} />
-        </div>
-        <div className={"work-card__content"}>
-          <div className={"work-card__header"}>
-            <a href={"/"} className={"work-card__link"}>
-              <SvgIcon name={`${theme === "light" ? "view-dark" : "view-light"}`} />
-            </a>
+    <React.Fragment>
+      <article className={`work-card__article ${theme === EWorkCardTheme.Light ? "_light" : "_dark"}`}>
+        <div className={"work-card__body"}>
+          <div className={"work-card__awesome-graphic"}>
+            <img src={work.awesomeGraphic} alt={"The project awesome graphic"} />
           </div>
-          <h3 className={"work-card__title"}>{work.title}</h3>
-          <div className={"work-card__description"}>
-            {work.description.map((paragraph, key) => {
-              return <p key={key}>{paragraph}</p>
-            })}
-          </div>
-          <h4 className={"work-card__technologies-title"}>{work.technologies.technologiesTitle}</h4>
-          <ul className={"work-card__technologies"}>
-            {work.technologies.technologiesList.map((el, key) => {
-              return <li key={key}>{el}</li>
-            })}
-          </ul>
-          <div className={"work-card__tools"}>
-            <p className={"work-card__tools-title"}>{work.tools.toolsTitle}</p>
-            <div className={"work-card__tools-list"}>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
+          <div className={"work-card__content"}>
+            <div className={"work-card__header"}>
+              <a href={"/"} className={"work-card__link"}>
+                <SvgIcon name={`${theme === EWorkCardTheme.Light ? "view-dark" : "view-light"}`} />
+              </a>
+            </div>
+            <h3 className={"work-card__title"}>{work.title}</h3>
+            <div className={"work-card__description"}>
+              {work.description.map((elt, key) => {
+                return <p key={key}>{elt}</p>
+              })}
+            </div>
+            <h4 className={"work-card__what-we-did-title"}>We did in the project</h4>
+            <ul className={"work-card__what-we-did"}>
+              {work.whatWeDid.map((elt, key) => {
+                return <li key={key}>{elt}</li>
+              })}
+            </ul>
+            <div className={"work-card__tools-wrapper"}>
+              <p className={"work-card__tools-title"}>The tools used</p>
+              <div className={"work-card__tools-used"}>
+                {work.toolsUsed.map((elt, key) => {
+                  return (
+                    <span key={key}>
+                      <SvgIcon name={elt} />
+                    </span>
+                  )
+                })}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </article>
+      </article>
+    </React.Fragment>
   )
 }
 

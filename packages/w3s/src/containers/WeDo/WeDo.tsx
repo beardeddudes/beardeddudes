@@ -86,11 +86,11 @@ const WeDo: FC = () => {
               <article className={"wedo__item"} key={key}>
                 <h3 className={"wedo__scope"}>{wedo.scope}</h3>
                 <ul className={"wedo__branches"}>
-                  {wedo.branches.map((branch, key) => {
+                  {wedo.branches.map((elt, key) => {
                     return (
                       <li className={"wedo__branch-wrapper"} key={key}>
                         <div className={"wedo__branch"}>
-                          <h4 className={"wedo__branch-title"}>{branch.title}</h4>
+                          <h4 className={"wedo__branch-title"}>{elt.title}</h4>
                         </div>
                       </li>
                     )
