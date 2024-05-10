@@ -6,6 +6,7 @@ import { SvgIcon } from "../../components/elements/Icon"
 import { useApp } from "../../contexts/App"
 
 import "./LetsStartedForm.scss"
+import BudgetSlider from "@/components/BudgetSlider/BudgetSlider/BudgetSlider"
 
 const LetsStartedForm: FC = () => {
   const { setLetsStartedFormVisibility } = useApp()
@@ -13,9 +14,7 @@ const LetsStartedForm: FC = () => {
   const Schema = Yup.object().shape({
     aboutProject: Yup.string().required("an about the project is required"),
     email: Yup.string().email().required("email is required"),
-    hearAboutUs: Yup.string(),
     name: Yup.string().required("name is required"),
-    represent: Yup.string(),
   })
 
   interface IValuesForm {
@@ -66,7 +65,7 @@ const LetsStartedForm: FC = () => {
           initialValues={initialFormValues}
           onSubmit={(values, actions) => handleSubmit(values, actions)}
         >
-          {({ values, errors }) => (
+          {({ values, errors, touched }) => (
             <Form>
               <div className={"lets-started-form__form-wrapper"}>
                 <div className={"lets-started-form__input lets-started-form-input"}>
@@ -74,7 +73,7 @@ const LetsStartedForm: FC = () => {
                   <label htmlFor={"name"} className={`lets-started-form-input__label ${values.name && "label-top"}`}>
                     What&apos;s your name?
                   </label>
-                  {errors.name && <div className={"lets-started-form-input__error"}>{errors.name}</div>}
+                  {touched.name && errors.name && <div className={"lets-started-form-input__error"}>{errors.name}</div>}
                 </div>
                 <div className={"lets-started-form__input lets-started-form-input"}>
                   <Field name={"represent"} id={"represent"} className={"lets-started-form-input__field"} />
@@ -84,14 +83,13 @@ const LetsStartedForm: FC = () => {
                   >
                     Name of your company / organization?
                   </label>
-                  <div className={"lets-started-form-input__error"}>{errors.represent}</div>
                 </div>
                 <div className={"lets-started-form__input lets-started-form-input"}>
                   <Field name={"email"} id={"email"} className={"lets-started-form-input__field"} />
                   <label htmlFor={"email"} className={`lets-started-form-input__label ${values.email && "label-top"}`}>
                     What&apos;s your Email?
                   </label>
-                  <div className={"lets-started-form-input__error"}>{errors.email}</div>
+                  {touched.email && errors.email && <div className={"lets-started-form-input__error"}>{errors.email}</div>}
                 </div>
                 <div className={"lets-started-form__input lets-started-form-input"}>
                   <Field name={"hearAboutUs"} id={"hearAboutUs"} className={"lets-started-form-input__field"} />
@@ -101,7 +99,9 @@ const LetsStartedForm: FC = () => {
                   >
                     How did you hear about us?
                   </label>
-                  <div className={"lets-started-form-input__error"}>{errors.hearAboutUs}</div>
+                </div>
+                <div className={"lets-started-form__input lets-started-form-input lets-started-form-input--big lets-started-form-input--slider"}>
+                  <BudgetSlider/>
                 </div>
                 <div className={"lets-started-form__input lets-started-form-input lets-started-form-input--big"}>
                   <Field name={"aboutProject"} id={"aboutProject"} className={"lets-started-form-input__field"} />
@@ -111,7 +111,7 @@ const LetsStartedForm: FC = () => {
                   >
                     Tell us about the project
                   </label>
-                  <div className={"lets-started-form-input__error"}>{errors.aboutProject}</div>
+                  {touched.aboutProject && errors.aboutProject && <div className={"lets-started-form-input__error"}>{errors.aboutProject}</div>}
                 </div>
               </div>
               <button className={"lets-started-form__submit-btn"} type={"submit"}>
