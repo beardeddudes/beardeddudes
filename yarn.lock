@@ -1648,7 +1648,6 @@ __metadata:
   dependencies:
     "@beardeddudes/vite-config": ~0.1.*
     "@gsap/react": ~2.1.1
-    "@studio-freight/react-lenis": ~0.0.47
     "@testing-library/dom": ~10.1.0
     "@testing-library/jest-dom": ~6.4.2
     "@testing-library/react": ~15.0.6
@@ -1659,10 +1658,12 @@ __metadata:
     "@types/react-router": ~5.1.20
     formik: ~2.4.5
     jsdom: ~24.0.0
+    locomotive-scroll: ~4.1.4
     lodash: ~4.17.21
     react: ~18.3.1
     react-dom: ~18.3.1
     react-i18next: ~14.1.1
+    react-locomotive-scroll: ~0.2.2
     react-responsive: ~10.0.0
     react-router: ~6.23.0
     react-router-dom: ~6.23.0
@@ -4367,51 +4368,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@studio-freight/hamo@npm:^0.6.28":
-  version: 0.6.33
-  resolution: "@studio-freight/hamo@npm:0.6.33"
-  dependencies:
-    "@studio-freight/tempus": ^0.0.38
-    just-debounce-it: ^3.2.0
-    nanoevents: ^9.0.0
-  peerDependencies:
-    react: ^18.2.0
-    react-dom: ^18.2.0
-  checksum: 05823336ea24e6325b41c78971c957f0c7cf2c47999b869299540ef2a6a7e3b15d8a92eaa2d4100ece607941d3265c74d7a2f5091df88047428373e639e30c9c
-  languageName: node
-  linkType: hard
-
-"@studio-freight/lenis@npm:^1.0.40":
-  version: 1.0.42
-  resolution: "@studio-freight/lenis@npm:1.0.42"
-  checksum: 506e1ee1277efb54ade2c02ba1cfe5ab096b06d306102987f8ae4e48be19f6f294b8d1ea1873857d31d9a9265a39b69e408f42edf69c81417a1f76b03ce7e45d
-  languageName: node
-  linkType: hard
-
-"@studio-freight/react-lenis@npm:~0.0.47":
-  version: 0.0.47
-  resolution: "@studio-freight/react-lenis@npm:0.0.47"
-  dependencies:
-    "@studio-freight/hamo": ^0.6.28
-    "@studio-freight/lenis": ^1.0.40
-    "@types/react": ^18.0.0
-    clsx: ^2.0.0
-    react: ^18.0.0
-    zustand: ^4.4.7
-  peerDependencies:
-    react: ^17 || ^18
-    react-dom: ^17 || ^18
-  checksum: 0b030c6ef5763c410f6a5102ffbd02fb07d8660c228f864fbf2229dbc72e355cbf81fa6374e4dc1cb2052e135b24fc7950533ba8a4693251ea18c416cfb27f90
-  languageName: node
-  linkType: hard
-
-"@studio-freight/tempus@npm:^0.0.38":
-  version: 0.0.38
-  resolution: "@studio-freight/tempus@npm:0.0.38"
-  checksum: 32610867d95944067878a09b78b6f86195cae5c81e8c4591736dafc2e2f9d4123f8a1ede8c2cd00d17f79413e0690955c143609f1cd0901850f7948ac9677412
-  languageName: node
-  linkType: hard
-
 "@surma/rollup-plugin-off-main-thread@npm:^2.2.3":
   version: 2.2.3
   resolution: "@surma/rollup-plugin-off-main-thread@npm:2.2.3"
@@ -5020,7 +4976,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:^18.0.0, @types/react@npm:~18.3.1":
+"@types/react@npm:*, @types/react@npm:~18.3.1":
   version: 18.3.1
   resolution: "@types/react@npm:18.3.1"
   dependencies:
@@ -6012,10 +5968,24 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"bezier-easing@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "bezier-easing@npm:2.1.0"
+  checksum: ec22666b5385979b3e7a63eaf2631395b1be5beb3aed4f14cc70ae9eb09032082584f7e3eec045e4c122466987ed7e159f5b39f82b8a9870cd55e75b0d55a7d5
+  languageName: node
+  linkType: hard
+
 "binary-extensions@npm:^2.0.0":
   version: 2.3.0
   resolution: "binary-extensions@npm:2.3.0"
   checksum: bcad01494e8a9283abf18c1b967af65ee79b0c6a9e6fcfafebfe91dbe6e0fc7272bafb73389e198b310516ae04f7ad17d79aacf6cb4c0d5d5202a7e2e52c7d98
+  languageName: node
+  linkType: hard
+
+"bindall-standalone@npm:^1.0.5":
+  version: 1.0.5
+  resolution: "bindall-standalone@npm:1.0.5"
+  checksum: 670a96a55a2609cbcf7f6a7066641e988d89467dbe479d1385fe12f3863253e81b7aab19d479fe718d81f8cd84fb40886bbe5b4b065e8220930f0fccc58465c0
   languageName: node
   linkType: hard
 
@@ -6652,13 +6622,6 @@ __metadata:
   version: 1.0.4
   resolution: "clone@npm:1.0.4"
   checksum: d06418b7335897209e77bdd430d04f882189582e67bd1f75a04565f3f07f5b3f119a9d670c943b6697d0afb100f03b866b3b8a1f91d4d02d72c4ecf2bb64b5dd
-  languageName: node
-  linkType: hard
-
-"clsx@npm:^2.0.0":
-  version: 2.1.1
-  resolution: "clsx@npm:2.1.1"
-  checksum: acd3e1ab9d8a433ecb3cc2f6a05ab95fe50b4a3cfc5ba47abb6cbf3754585fcb87b84e90c822a1f256c4198e3b41c7f6c391577ffc8678ad587fc0976b24fd57
   languageName: node
   linkType: hard
 
@@ -10704,13 +10667,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"just-debounce-it@npm:^3.2.0":
-  version: 3.2.0
-  resolution: "just-debounce-it@npm:3.2.0"
-  checksum: a42039a341f1bdf9ccb797e8df88b7e218a95efee01a7bb4bce53bfd5befe0334f3ce32b905e01666312868ade7c1c23071dcd53e80aaa1000b7246382176e84
-  languageName: node
-  linkType: hard
-
 "keyv@npm:^4.5.3":
   version: 4.5.4
   resolution: "keyv@npm:4.5.4"
@@ -10763,6 +10719,13 @@ __metadata:
   version: 0.29.0
   resolution: "known-css-properties@npm:0.29.0"
   checksum: daa6562e907f856cbfd58a00c42f532c9bba283388984da6a3bffb494e56612e5f23c52f30b0d9885f0ea07ad5d88bfa0470ee65017a6ce6c565289a1afd78af
+  languageName: node
+  linkType: hard
+
+"lethargy@npm:^1.0.2":
+  version: 1.0.9
+  resolution: "lethargy@npm:1.0.9"
+  checksum: 2ca67fe57752cb86224b6799b87e8819e0d7636eafe16c59a596c9e1125ac6ee9f17eb5e92ef853926137cc70fa9798396e7aa38563751a75109450de9979fb8
   languageName: node
   linkType: hard
 
@@ -10906,6 +10869,17 @@ __metadata:
   dependencies:
     p-locate: ^5.0.0
   checksum: 72eb661788a0368c099a184c59d2fee760b3831c9c1c33955e8a19ae4a21b4116e53fa736dc086cdeb9fce9f7cc508f2f92d2d3aae516f133e16a2bb59a39f5a
+  languageName: node
+  linkType: hard
+
+"locomotive-scroll@npm:~4.1.4":
+  version: 4.1.4
+  resolution: "locomotive-scroll@npm:4.1.4"
+  dependencies:
+    bezier-easing: ^2.1.0
+    smoothscroll-polyfill: ^0.4.4
+    virtual-scroll: ^1.5.2
+  checksum: 28ee6ca336dd8e72c7d97d9f8a551900f0535fc51a86b650034ec04acecc1e1554d1c5936f95cfd460a6571a9ee5af354bc3bd1a6c7aecd1b1063a4c8ab68eba
   languageName: node
   linkType: hard
 
@@ -11610,13 +11584,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nanoevents@npm:^9.0.0":
-  version: 9.0.0
-  resolution: "nanoevents@npm:9.0.0"
-  checksum: d5e062bc67eac903991973ca923a0c9c6a3aa224583647540a0fdbe99d569f3c51f8fc6f281851e1721b24b3d0b8ea47c12215a50a0e1a3d0df1e64a41406974
-  languageName: node
-  linkType: hard
-
 "nanoid@npm:^3.3.7":
   version: 3.3.7
   resolution: "nanoid@npm:3.3.7"
@@ -11830,7 +11797,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"object-assign@npm:^4.1.0, object-assign@npm:^4.1.1":
+"object-assign@npm:^4.0.1, object-assign@npm:^4.1.0, object-assign@npm:^4.1.1":
   version: 4.1.1
   resolution: "object-assign@npm:4.1.1"
   checksum: fcc6e4ea8c7fe48abfbb552578b1c53e0d194086e2e6bbbf59e0a536381a292f39943c6e9628af05b5528aa5e3318bb30d6b2e53cadaf5b8fe9e12c4b69af23f
@@ -13291,6 +13258,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-locomotive-scroll@npm:~0.2.2":
+  version: 0.2.2
+  resolution: "react-locomotive-scroll@npm:0.2.2"
+  dependencies:
+    use-debounce: 6.0.1
+    use-resize-observer: 6.1.0
+  peerDependencies:
+    locomotive-scroll: ^4.1.4
+    react: ^18.0.2
+  checksum: 06a1bf798f58244c0110512394ab80ae10a7b7227efbf3dfab81d56eeec1dc914a03410b5083b62a81dd4843fa4142dc6410ab7bfa239cd10a7b318a36820d08
+  languageName: node
+  linkType: hard
+
 "react-refresh@npm:^0.14.0":
   version: 0.14.2
   resolution: "react-refresh@npm:0.14.2"
@@ -13371,7 +13351,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:>=16, react@npm:^18.0.0, react@npm:~18.3.1":
+"react@npm:>=16, react@npm:~18.3.1":
   version: 18.3.1
   resolution: "react@npm:18.3.1"
   dependencies:
@@ -14464,6 +14444,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"smoothscroll-polyfill@npm:^0.4.4":
+  version: 0.4.4
+  resolution: "smoothscroll-polyfill@npm:0.4.4"
+  checksum: b99ff7d91689d563ec69cb1d29713b332a24c88ac3dc4ef9ef9fbe4137305336e67253211067c5f786478dbdabd2aa6c2033709d4d8feca327b09eca8d5a0e7b
+  languageName: node
+  linkType: hard
+
 "snake-case@npm:^3.0.4":
   version: 3.0.4
   resolution: "snake-case@npm:3.0.4"
@@ -15498,6 +15485,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tiny-emitter@npm:^1.0.0":
+  version: 1.2.0
+  resolution: "tiny-emitter@npm:1.2.0"
+  checksum: f21f76da7c1c7fbc60c4ff32c43db8ef601aa98ffc79b75ab1e2d6308c0695d9aa5bd0c941e3a234d8e49ca994ab574692754d5617bd7d2b48b880857e0e3154
+  languageName: node
+  linkType: hard
+
 "tiny-invariant@npm:^1.1.0":
   version: 1.3.3
   resolution: "tiny-invariant@npm:1.3.3"
@@ -16302,12 +16296,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"use-sync-external-store@npm:1.2.0":
-  version: 1.2.0
-  resolution: "use-sync-external-store@npm:1.2.0"
+"use-debounce@npm:6.0.1":
+  version: 6.0.1
+  resolution: "use-debounce@npm:6.0.1"
   peerDependencies:
-    react: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: 5c639e0f8da3521d605f59ce5be9e094ca772bd44a4ce7322b055a6f58eeed8dda3c94cabd90c7a41fb6fa852210092008afe48f7038792fd47501f33299116a
+    react: ">=16.8.0"
+  checksum: 9f811075652712b418dd0f6b09de62a37b0e1bb65295d3b6f797aed0eb2267188def0039e820f67aa5b6cb866a00f02da9bcf680e098a524d22e7d33438e4935
+  languageName: node
+  linkType: hard
+
+"use-resize-observer@npm:6.1.0":
+  version: 6.1.0
+  resolution: "use-resize-observer@npm:6.1.0"
+  dependencies:
+    resize-observer-polyfill: ^1.5.1
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: a4135446ed1c022f89c8ed21bc98aad96db823489cd9ca8a7c69b99e0bbd81d804adec5ab4418cddc6512e6f2fa974541da54acb1f93af5579cd19457de2ea7c
   languageName: node
   linkType: hard
 
@@ -16374,6 +16380,18 @@ __metadata:
     unist-util-stringify-position: ^1.0.0
     vfile-message: ^1.0.0
   checksum: d0a0caf7eca8478b2caa93e72bc3b37a2bf77916a195d8937b173d7fe0ded9a0146503de269afabf2a0465fa6b4c009d1486a4e5dd070f6d5fd225eb4ed25343
+  languageName: node
+  linkType: hard
+
+"virtual-scroll@npm:^1.5.2":
+  version: 1.5.2
+  resolution: "virtual-scroll@npm:1.5.2"
+  dependencies:
+    bindall-standalone: ^1.0.5
+    lethargy: ^1.0.2
+    object-assign: ^4.0.1
+    tiny-emitter: ^1.0.0
+  checksum: ea1064a2f77b168c24cf71052a54ecbc88eb4efd4f2043a81d1f699a61f83e4600aadb6db30ddc66bce78e67b67afa7217f9d75fa485bf6121a6399c382ec1ee
   languageName: node
   linkType: hard
 
@@ -17437,25 +17455,5 @@ __metadata:
     toposort: ^2.0.2
     type-fest: ^2.19.0
   checksum: 7b9e19fedc85deb8cffd6b24617f79542c904f11a9c4ca8bb72fb003e61bd6c5278cc799fa9421c6a1a96ff04e7117bf0c000c9f10b543d6cd32a1e35e8f5f65
-  languageName: node
-  linkType: hard
-
-"zustand@npm:^4.4.7":
-  version: 4.5.2
-  resolution: "zustand@npm:4.5.2"
-  dependencies:
-    use-sync-external-store: 1.2.0
-  peerDependencies:
-    "@types/react": ">=16.8"
-    immer: ">=9.0.6"
-    react: ">=16.8"
-  peerDependenciesMeta:
-    "@types/react":
-      optional: true
-    immer:
-      optional: true
-    react:
-      optional: true
-  checksum: 160052a7faaefbaad1071e890a06e5d7a04f6ff6985def30a7b4471f4ddbdd1d30bb05b3688a2777cd0b717d1f0d98dad24883a5caa3deeb3afb4d83b6dabc55
   languageName: node
   linkType: hard
