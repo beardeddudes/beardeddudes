@@ -11,7 +11,7 @@ import Works from "./../containers/Works/Works"
 import { useApp } from "./../contexts/App"
 
 const MainPage: FC = () => {
-  const { isLetsStartedFormVisibile } = useApp()
+  const { isLetsStartedFormVisible } = useApp()
 
   return (
     <React.Fragment>
@@ -21,7 +21,7 @@ const MainPage: FC = () => {
       <Process />
       <Works />
       <AboutUs />
-      {isLetsStartedFormVisibile && <LetsGetStartedForm />}
+      {isLetsStartedFormVisible && <LetsGetStartedForm />}
     </React.Fragment>
   )
 }
