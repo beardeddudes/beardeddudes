@@ -6,9 +6,9 @@
     @include adaptive-value("padding-top", 24, 15, 1);
     @include adaptive-value("padding-bottom", 24, 15, 1);
 
-    display: grid;
-    grid-template-columns: 185px 1fr 185px;
+    display: flex;
     align-items: center;
+    justify-content: space-between;
     max-width: $container;
     margin: 0 auto;
     padding-right: 20px;
@@ -17,7 +17,7 @@
   }
 
   &__logo {
-    grid-column: 1/2;
+    flex: 0 0 185px;
     color: rgb(11, 11, 11);
     font-weight: 700;
     font-size: 24px;
@@ -25,36 +25,80 @@
 
   &__navigation {
     display: flex;
-    grid-column: 2/3;
     align-items: center;
     justify-content: center;
+    padding: 15px 50px;
+    line-height: 150%;
     column-gap: 29px;
-
-    @media (max-width: $lg) {
-      display: none;
-    }
+    background-color: $primary-color;
+    border-radius: 35px;
   }
 
   &__navigation-btn {
-    color: $primary-color;
+    color: $secondary-color;
     font-weight: 500;
   }
 
   &__start-project-btn {
     display: flex;
-    flex: 0 0 auto;
-    grid-column: 3/4;
+    flex: 0 0 185px;
     align-items: center;
     justify-content: center;
     width: 100%;
     padding: 15px 24px;
     color: $secondary-color;
     font-weight: 500;
+    line-height: 150%;
     background-color: $primary-color;
     border-radius: 35px;
+  }
 
-    @media (max-width: $lg) {
-      display: none;
+  &__burger-btn {
+    position: relative;
+    flex: 0 0 24px;
+    width: 24px;
+    height: 12px;
+    transform: scale(1);
+
+    &::after,
+    &::before {
+      position: absolute;
+      right: 0;
+      height: 2px;
+      background-color: $primary-color;
+      content: "";
+    }
+
+    &::after {
+      bottom: 0;
+      width: 100%;
+      transition: all 0.3s;
+    }
+
+    &::before {
+      top: 0;
+      width: 80%;
+      transition: all 0.3s;
+    }
+
+    &._isActive {
+      height: 18px;
+      transform: scale(0);
+      transition: all 0.2s ease;
+
+      &::after {
+        width: 90%;
+        transform: rotate(45deg);
+        transform-origin: top right;
+        transition: all 0.3s;
+      }
+
+      &::before {
+        width: 90%;
+        transform: rotate(-45deg);
+        transform-origin: bottom right;
+        transition: all 0.3s;
+      }
     }
   }
 }
