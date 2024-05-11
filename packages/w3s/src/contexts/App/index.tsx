@@ -4,7 +4,7 @@ import { useNetworkState } from "react-use"
 interface IAppProps {
   /* Properties */
   isDrawerVisible: boolean
-  isLetsStartedFormVisibile: boolean
+  isLetsStartedFormVisible: boolean
   isOnline: boolean
 
   /* Getters, Setters */
@@ -16,7 +16,7 @@ type AppProviderProps = PropsWithChildren<Partial<IAppProps>>
 
 const initialAppProps: IAppProps = {
   isDrawerVisible: false,
-  isLetsStartedFormVisibile: false,
+  isLetsStartedFormVisible: false,
   isOnline: false,
 
   setDrawerVisibility: () => {},
@@ -29,7 +29,7 @@ const AppProvider: FC<AppProviderProps> = ({ children, ...props }) => {
   const { online } = useNetworkState()
 
   const [isDrawerVisible, setDrawerVisibility] = useState<boolean>(false)
-  const [isLetsStartedFormVisibile, setLetsStartedFormVisibility] = useState<boolean>(false)
+  const [isLetsStartedFormVisible, setLetsStartedFormVisibility] = useState<boolean>(false)
   const [isOnline, setOnline] = useState<boolean>(online || false)
 
   useEffect(() => {
@@ -38,7 +38,7 @@ const AppProvider: FC<AppProviderProps> = ({ children, ...props }) => {
 
   const appContextProps: IAppProps = {
     isDrawerVisible,
-    isLetsStartedFormVisibile,
+    isLetsStartedFormVisible,
     isOnline,
 
     setDrawerVisibility,
