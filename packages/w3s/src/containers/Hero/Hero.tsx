@@ -13,6 +13,7 @@ const Hero: FC = () => {
           <div className={"hero__main hero__main--to"}>to</div>
           <div className={"hero__main hero__main--end"}>release</div>
         </div>
+        <div className={"hero__stretch"} />
         <div className={"hero__bottom"}>
           <div className={"hero__intro-the-company"}>
             Team of creative minds with more than 15 years of experience in the field. In this complex world...

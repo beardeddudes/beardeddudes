@@ -19,7 +19,7 @@
     @include adaptive-value("gap", 200, 10, 1);
 
     display: grid;
-    grid-template-columns: 1fr 175px 1fr;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
 
     @media (max-width: $lg) {
@@ -81,7 +81,7 @@
   }
 
   &__title {
-    @include adaptive-value("font-size", 210, 100, 1);
+    @include adaptive-value("font-size", 210, 97, 1);
     @include adaptive-value("margin-bottom", 160, 60, 1);
 
     color: $secondary-color;
@@ -99,16 +99,18 @@
     grid-column: 2/3;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    padding: 15px 24px;
+    width: auto;
+    padding: 17px 30px 19px;
     color: $primary-color;
     font-weight: 500;
+    line-height: 150%;
     background-color: $secondary-color;
     border-radius: 35px;
 
     @media (max-width: $lg) {
       grid-row: 3/4;
       grid-column: 1/2;
+      padding: 22px 30px 24px;
     }
   }
 

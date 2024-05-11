@@ -62,10 +62,6 @@ const Technologies: FC = () => {
                     use it as a portfolio to showcase your work.
                   </p>
                   <p>Make your profile page stand out from the crowd, highlight your submissions</p>
-                  <p>
-                    Gleam is a clean and modern photography WordPress theme for creative photographers websites. You can
-                    use it as a portfolio to showcase your work.
-                  </p>
                   <p>Make your profile page stand out from the crowd, highlight your submissions</p>
                 </React.Fragment>
               )}

@@ -13,11 +13,15 @@
     margin: 0 auto;
     padding-right: 20px;
     padding-left: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   &__title {
     @include adaptive-value("margin-bottom", 80, 80, 1);
-    @include adaptive-value("font-size", 220, 80, 1);
+    @include adaptive-value("font-size", 205, 30, 1);
 
     color: $secondary-color;
     font-weight: 700;
@@ -25,6 +29,8 @@
     text-transform: uppercase;
 
     @media (max-width: $lg) {
+      @include adaptive-value(" max-width", 750, 320, 1);
+      @include adaptive-value("font-size", 150, 70, 1);
       line-height: 90%;
     }
   }
@@ -35,6 +41,7 @@
     @include adaptive-value("padding-left", 60, 20, 1);
     @include adaptive-value("padding-right", 60, 20, 1);
 
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -175,7 +182,7 @@
   }
 
   &__heading {
-    @include adaptive-value("font-size", 140, 50, 1);
+    @include adaptive-value("font-size", 135, 50, 1);
 
     font-weight: 800;
     line-height: 140%;

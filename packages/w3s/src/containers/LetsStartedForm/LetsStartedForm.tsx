@@ -4,12 +4,14 @@ import * as Yup from "yup"
 
 import { SvgIcon } from "../../components/elements/Icon"
 import { useApp } from "../../contexts/App"
+import BudgetSlider from "./../../components/BudgetSlider/BudgetSlider/BudgetSlider"
+import { useScrollLock } from "./../../hooks/useScrollLock"
 
 import "./LetsStartedForm.scss"
-import BudgetSlider from "@/components/BudgetSlider/BudgetSlider/BudgetSlider"
 
 const LetsStartedForm: FC = () => {
-  const { setLetsStartedFormVisibility } = useApp()
+  const { isLetsStartedFormVisible, setLetsStartedFormVisibility } = useApp()
+  useScrollLock(isLetsStartedFormVisible)
 
   const Schema = Yup.object().shape({
     aboutProject: Yup.string().required("an about the project is required"),
@@ -89,7 +91,9 @@ const LetsStartedForm: FC = () => {
                   <label htmlFor={"email"} className={`lets-started-form-input__label ${values.email && "label-top"}`}>
                     What&apos;s your Email?
                   </label>
-                  {touched.email && errors.email && <div className={"lets-started-form-input__error"}>{errors.email}</div>}
+                  {touched.email && errors.email && (
+                    <div className={"lets-started-form-input__error"}>{errors.email}</div>
+                  )}
                 </div>
                 <div className={"lets-started-form__input lets-started-form-input"}>
                   <Field name={"hearAboutUs"} id={"hearAboutUs"} className={"lets-started-form-input__field"} />
@@ -100,8 +104,13 @@ const LetsStartedForm: FC = () => {
                     How did you hear about us?
                   </label>
                 </div>
-                <div className={"lets-started-form__input lets-started-form-input lets-started-form-input--big lets-started-form-input--slider"}>
-                  <BudgetSlider/>
+                <div
+                  className={
+                    "lets-started-form__input lets-started-form-input lets-started-form-input--big lets-started-form-input--slider"
+                  }
+                >
+                  <label className={"lets-started-form-input__label"}>What&apos;s your budget?</label>
+                  <BudgetSlider />
                 </div>
                 <div className={"lets-started-form__input lets-started-form-input lets-started-form-input--big"}>
                   <Field name={"aboutProject"} id={"aboutProject"} className={"lets-started-form-input__field"} />
@@ -111,12 +120,14 @@ const LetsStartedForm: FC = () => {
                   >
                     Tell us about the project
                   </label>
-                  {touched.aboutProject && errors.aboutProject && <div className={"lets-started-form-input__error"}>{errors.aboutProject}</div>}
+                  {touched.aboutProject && errors.aboutProject && (
+                    <div className={"lets-started-form-input__error"}>{errors.aboutProject}</div>
+                  )}
                 </div>
+                <button className={"lets-started-form__submit-btn"} type={"submit"}>
+                  <span>Submit</span>
+                </button>
               </div>
-              <button className={"lets-started-form__submit-btn"} type={"submit"}>
-                <span>Submit</span>
-              </button>
             </Form>
           )}
         </Formik>

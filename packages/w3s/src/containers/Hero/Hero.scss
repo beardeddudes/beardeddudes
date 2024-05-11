@@ -3,15 +3,17 @@
 
 .hero {
   &__section {
-    min-height: 100vh;
-    padding-bottom: 80px;
     background-color: $secondary-color;
   }
 
   &__container {
+    display: flex;
+    flex-direction: column;
     max-width: $container;
+    min-height: 100vh;
     margin: 0 auto;
     padding-right: 20px;
+    padding-bottom: 40px;
     padding-left: 20px;
   }
 
@@ -32,6 +34,8 @@
   }
 
   &__main {
+    flex: 0 0 auto;
+
     &--start {
       @include adaptive-value("font-size", 80, 60, 1);
 
@@ -85,8 +89,13 @@
     }
   }
 
+  &__stretch {
+    flex: 1 1 auto;
+  }
+
   &__bottom {
     display: grid;
+    flex: 0 0 auto;
     grid-template-columns: 1fr 122px 1fr;
     align-items: end;
     height: 122px;
@@ -121,7 +130,7 @@
       padding-right: 30px;
       font-weight: 600;
       line-height: 170%;
-      transform: rotate(90deg) translate(50%, 0);
+      transform: rotate(90deg) translate(40%, 0);
 
       &::after {
         position: absolute;
