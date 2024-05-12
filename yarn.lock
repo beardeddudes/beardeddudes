@@ -1657,11 +1657,13 @@ __metadata:
     "@types/react-responsive": ~8.0.8
     "@types/react-router": ~5.1.20
     formik: ~2.4.5
+    gsap: ~3.12.5
     jsdom: ~24.0.0
     locomotive-scroll: ~4.1.4
     lodash: ~4.17.21
     react: ~18.3.1
     react-dom: ~18.3.1
+    react-error-boundary: ~4.0.13
     react-i18next: ~14.1.1
     react-locomotive-scroll: ~0.2.2
     react-responsive: ~10.0.0
@@ -9191,7 +9193,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gsap@npm:^3.12.5":
+"gsap@npm:^3.12.5, gsap@npm:~3.12.5":
   version: 3.12.5
   resolution: "gsap@npm:3.12.5"
   checksum: 60b99dc4482992ba86013963ee9a97a5ec62d480495dd85764788913245aa08cfd202c1df4bbc7592e43d5faa885127bec75f77266f2964fe3d3b559ab63f852
@@ -13209,6 +13211,17 @@ __metadata:
   peerDependencies:
     react: ^18.3.1
   checksum: 298954ecd8f78288dcaece05e88b570014d8f6dce5db6f66e6ee91448debeb59dcd31561dddb354eee47e6c1bb234669459060deb238ed0213497146e555a0b9
+  languageName: node
+  linkType: hard
+
+"react-error-boundary@npm:~4.0.13":
+  version: 4.0.13
+  resolution: "react-error-boundary@npm:4.0.13"
+  dependencies:
+    "@babel/runtime": ^7.12.5
+  peerDependencies:
+    react: ">=16.13.1"
+  checksum: 50398d080015d51d22c6f94c56f4ea336d10232d72345b36ee6f15b6b643666d20b072829b02f091a80e5af68fe67f68a62ef0d2b649dbd759ead929304449af
   languageName: node
   linkType: hard
 
