@@ -62,9 +62,9 @@
       flex-shrink: 0;
       align-items: center;
       justify-content: center;
-      color: $primary-color;
+      color: $secondary-color;
       font-weight: 800;
-      background-color: $accent-color;
+      background-color: $primary-color;
       border-radius: 50%;
 
       @media (max-width: $lg) {
