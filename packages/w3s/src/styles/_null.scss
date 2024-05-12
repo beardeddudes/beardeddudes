@@ -8,6 +8,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  cursor: none;
 }
 
 :focus,
@@ -43,7 +44,7 @@ input::-ms-clear {
 }
 
 button {
-  cursor: pointer;
+  cursor: none;
 
   &::-moz-focus-inner {
     padding: 0;
