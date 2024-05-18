@@ -1,6 +1,8 @@
 import { FC } from "react"
 
 import "./WeDo.scss"
+import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
 
 interface IWeDo {
   scope: string
@@ -66,6 +68,24 @@ const WeDo: FC = () => {
     },
   ] as const
 
+  useGSAP(() => {
+    gsap.set(".wedo__branch-hover", { height: "0%", pointerEvents: "none", opacity: 0, zIndex: 0 });
+  
+    gsap.utils.toArray(".wedo__branch-wrapper").forEach((wrapp) => {
+      const wrapperElement = wrapp as HTMLElement;
+      const branchHover = wrapperElement.querySelector(".wedo__branch-hover") as HTMLElement;
+  
+      const tl = gsap.timeline({ paused: true, defaults: { duration: 0.5 } });
+  
+      gsap.set(branchHover, { backgroundColor: "#e2e2e2", color: "#151515" });
+  
+      tl.to(branchHover, { height: "100%", opacity: 1 });
+  
+      wrapperElement.addEventListener("mouseenter", () => tl.timeScale(1).play());
+      wrapperElement.addEventListener("mouseleave", () => tl.timeScale(3).reverse());
+    });
+  });
+
   return (
     <section className={"wedo__section"}>
       <div className={"wedo__heading"}>
@@ -87,6 +107,12 @@ const WeDo: FC = () => {
                     <li className={"wedo__branch-wrapper"} key={key}>
                       <div className={"wedo__branch"}>
                         <h4 className={"wedo__branch-title"}>{elt.title}</h4>
+                      </div>
+                      <div className="wedo__branch-hover">
+                        <div className="wedo__branch-hover-container">
+                            <p className="wedo__branch-description">{elt.description}</p>
+                            <h4 className={"wedo__branch-hover-title wedo__branch-title"}>{elt.title}</h4>
+                        </div>
                       </div>
                     </li>
                   )
