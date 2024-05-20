@@ -1669,6 +1669,7 @@ __metadata:
     react-responsive: ~10.0.0
     react-router: ~6.23.0
     react-router-dom: ~6.23.0
+    react-typed: ^2.0.12
     react-use: ~17.5.0
     sass-true: ~8.0.0
     swiper: ~11.0.6
@@ -13329,6 +13330,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-typed@npm:^2.0.12":
+  version: 2.0.12
+  resolution: "react-typed@npm:2.0.12"
+  dependencies:
+    typed.js: ^2.1.0
+  peerDependencies:
+    react: ">16.8.0"
+  checksum: b1a51843356d1fadf3253a0d8a2f9100ed303043af905f932c0f5a4cf537cc9bcd7c97dd89cc997aec9d654c8820aa0bd731fb9dde42a8547cba39fe35ff0ad8
+  languageName: node
+  linkType: hard
+
 "react-universal-interface@npm:^0.6.2":
   version: 0.6.2
   resolution: "react-universal-interface@npm:0.6.2"
@@ -15961,6 +15973,13 @@ __metadata:
     is-typed-array: ^1.1.13
     possible-typed-array-names: ^1.0.0
   checksum: f0315e5b8f0168c29d390ff410ad13e4d511c78e6006df4a104576844812ee447fcc32daab1f3a76c9ef4f64eff808e134528b5b2439de335586b392e9750e5c
+  languageName: node
+  linkType: hard
+
+"typed.js@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "typed.js@npm:2.1.0"
+  checksum: 688f8a13a2a93317c87bb499f9d4159a0df5e5f67960cddd96a11ae53362b78ab5597d32eb3b300d97ddbe71c1dd5dd817625687ccc8be810643f3922d92b64d
   languageName: node
   linkType: hard
 

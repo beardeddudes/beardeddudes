@@ -35,6 +35,7 @@
     "@types/react-responsive": "~8.0.8",
     "@types/react-router": "~5.1.20",
     "jsdom": "~24.0.0",
+    "react-typed": "^2.0.12",
     "sass-true": "~8.0.0",
     "vitest": "~1.5.3"
   },
