@@ -183,6 +183,7 @@
 
   &__heading {
     @include adaptive-value("font-size", 135, 50, 1);
+    @include adaptive-value("height", 195, 195, 1);
 
     font-weight: 800;
     line-height: 140%;

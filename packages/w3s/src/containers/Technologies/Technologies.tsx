@@ -1,5 +1,6 @@
 import React, { FC, useState } from "react"
 
+import { ReactTyped } from "react-typed"
 import "./Technologies.scss"
 
 const Technologies: FC = () => {
@@ -67,9 +68,36 @@ const Technologies: FC = () => {
               )}
             </div>
             <h3 className={"content-main__heading"}>
-              {toggle === "design" && "design"}
-              {toggle === "frontend" && "frontend"}
-              {toggle === "backend" && "backend"}
+              {toggle === "design" && (
+                <ReactTyped
+                  strings={["design"]}
+                  startDelay={100}
+                  typeSpeed={150}
+                  backSpeed={100}
+                  startWhenVisible={true}
+                  showCursor={false}
+                />
+              )}
+              {toggle === "frontend" && (
+                <ReactTyped
+                  strings={["frontend"]}
+                  startDelay={100}
+                  typeSpeed={150}
+                  backSpeed={100}
+                  startWhenVisible={true}
+                  showCursor={false}
+                />
+              )}
+              {toggle === "backend" && (
+                <ReactTyped
+                  strings={["backend"]}
+                  startDelay={100}
+                  typeSpeed={150}
+                  backSpeed={100}
+                  startWhenVisible={true}
+                  showCursor={false}
+                />
+              )}
             </h3>
           </div>
           <div className={"technologies__content-icons"}>

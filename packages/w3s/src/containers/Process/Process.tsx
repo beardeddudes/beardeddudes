@@ -1,8 +1,43 @@
+import gsap from "gsap"
 import { FC } from "react"
 
+import { useGSAP } from "@gsap/react"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 import "./Process.scss"
 
 const Process: FC = () => {
+  useGSAP(() => {
+    gsap.registerPlugin(ScrollTrigger)
+
+    const steps = gsap.utils.toArray(".process__step") as HTMLElement[]
+    const stickDistance = 0
+
+    const lastCardST = ScrollTrigger.create({
+      trigger: steps[steps.length - 1],
+      start: "center center",
+    })
+
+    steps.forEach((step, index) => {
+      const scale = 1 - (steps.length - index) * 0.025
+
+      const scaleDown = gsap.to(step, {
+        scale: scale,
+        backgroundColor: "#e2e2e2",
+        color: "#151515",
+      })
+
+      ScrollTrigger.create({
+        trigger: step,
+        start: "center center",
+        end: () => lastCardST.start + stickDistance,
+        pin: true,
+        pinSpacing: false,
+        animation: scaleDown,
+        toggleActions: "restart none none reverse",
+      })
+    })
+  })
+
   return (
     <section className={"process__section"}>
       <div className={"process__container"}>
