@@ -7,6 +7,11 @@ import { useBreakpoints } from "./../../hooks/useBreakpoints"
 
 import noImage from "./../../assets/images/no-image-placeholder.png"
 
+import { useGSAP } from "@gsap/react"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+
+import { useMediaQuery } from "react-responsive"
 import "swiper/css"
 import "./AboutUs.scss"
 
@@ -17,7 +22,7 @@ interface IPrinciple {
 
 const AboutUs: FC = () => {
   const { isTablet } = useBreakpoints()
-
+  const is1800px = useMediaQuery({ minWidth: 1800 })
   const swiperOptions: SwiperOptions = {
     breakpoints: {
       680: { spaceBetween: 20, slidesPerView: 2.2 },
@@ -26,7 +31,7 @@ const AboutUs: FC = () => {
     loop: true,
     simulateTouch: true,
   }
-
+  //prettier-ignore
   const persons: IPerson[] = [
     {
       photo: noImage,
@@ -66,6 +71,7 @@ const AboutUs: FC = () => {
     },
   ] as const
 
+  //prettier-ignore
   const principles: IPrinciple[] = [
     {
       title: "Quality",
@@ -88,6 +94,31 @@ const AboutUs: FC = () => {
         "Discover outstanding websites that cater to online businesses, showcasing a wide range of products and services across diverse Discover outstanding websites that cater to online businesses, showcasing a wide range of products and services across diverse",
     },
   ] as const
+
+  useGSAP(() => {
+    if (is1800px) {
+      gsap.registerPlugin(ScrollTrigger)
+
+      const cards = gsap.utils.toArray(".person-card__article") as HTMLElement[]
+
+      cards.forEach(card => {
+        gsap.set(card, { y: -70, opacity: 0 })
+      })
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".about-us__our-team",
+          start: "center 80%",
+          end: "top 40%",
+          scrub: true,
+        },
+      })
+
+      cards.forEach(card => {
+        tl.to(card, { y: 0, opacity: 1 })
+      })
+    }
+  })
 
   return (
     <section className={"about-us__section"}>
