@@ -8,11 +8,7 @@ import Technologies from "./../containers/Technologies/Technologies"
 import WeDo from "./../containers/WeDo/WeDo"
 import Works from "./../containers/Works/Works"
 
-import { useApp } from "./../contexts/App"
-
 const MainPage: FC = () => {
-  const { isLetsStartedFormVisible } = useApp()
-
   return (
     <React.Fragment>
       <Hero />
@@ -21,7 +17,7 @@ const MainPage: FC = () => {
       <Process />
       <Works />
       <AboutUs />
-      {isLetsStartedFormVisible && <LetsGetStartedForm />}
+      <LetsGetStartedForm />
     </React.Fragment>
   )
 }

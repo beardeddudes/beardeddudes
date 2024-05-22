@@ -7,11 +7,16 @@ import { SvgIcon } from "../../components/elements/Icon"
 import { useApp } from "../../contexts/App"
 import { useScrollLock } from "../../hooks/useScrollLock"
 
+import useModal from "./../../hooks/useModal"
 import "./LetsStartedForm.scss"
 
 const LetsStartedForm: FC = () => {
   const { isLetsStartedFormVisible, setLetsStartedFormVisibility } = useApp()
+
+  const { isOpen, isVisible } = useModal(isLetsStartedFormVisible)
   useScrollLock(isLetsStartedFormVisible)
+
+  if (!isOpen) return null
 
   const Schema = Yup.object().shape({
     aboutProject: Yup.string().required("an about the project is required"),
@@ -49,7 +54,7 @@ const LetsStartedForm: FC = () => {
   }
 
   return (
-    <div className={"lets-started-form__body"}>
+    <dialog className={`lets-started-form__body ${isVisible ? "_isVisible" : ""}`}>
       <button
         className={"lets-started-form__close-btn"}
         type={"button"}
@@ -132,7 +137,7 @@ const LetsStartedForm: FC = () => {
           )}
         </Formik>
       </div>
-    </div>
+    </dialog>
   )
 }
 
